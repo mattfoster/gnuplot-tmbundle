@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+# just to remind you of some useful environment variables
+# see Help / Environment Variables for the full list
+# echo File: "$TM_FILEPATH"
+# echo Word: "$TM_CURRENT_WORD"
+# echo Selection: "$TM_SELECTED_TEXT"
+file = STDIN.read.split("\n")
+file = file.select { |x| !(x =~ /^set (term|output)/) }
+IO.popen("/opt/bin/gnuplot",'w') { |f|
+	f.puts file.join("\n")
+}</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@r</string>
+	<key>name</key>
+	<string>Run Gnuplot</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>uuid</key>
+	<string>799B68E9-5DA3-41CC-BC70-76B1D1C83DB6</string>
+</dict>
+</plist>
