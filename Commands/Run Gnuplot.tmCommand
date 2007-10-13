@@ -13,9 +13,12 @@
 # echo Word: "$TM_CURRENT_WORD"
 # echo Selection: "$TM_SELECTED_TEXT"
 file = STDIN.read.split("\n")
-file = file.select { |x| !(x =~ /^set (term|output)/) }
-IO.popen("/opt/bin/gnuplot",'w') { |f|
-	f.puts file.join("\n")
+
+plotnum = 0;
+file = file.select { |x| ! (x =~ /^set term/) }.map { |x| x =~ /^set output/ ?  "set term aqua #{plotnum += 1}" : x }
+
+IO.popen("gnuplot",'w') { |f|
+  f.puts file.join("\n")
 }</string>
 	<key>input</key>
 	<string>document</string>
@@ -24,7 +27,7 @@ IO.popen("/opt/bin/gnuplot",'w') { |f|
 	<key>name</key>
 	<string>Run Gnuplot</string>
 	<key>output</key>
-	<string>discard</string>
+	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>source.gnuplot</string>
 	<key>uuid</key>

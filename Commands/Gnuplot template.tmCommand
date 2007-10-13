@@ -7,7 +7,7 @@
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 $: &lt;&lt; ENV["TM_SUPPORT_PATH"]+"/lib"
-require "dialog.rb"
+require "ui.rb"
 require 'date'
 if (!ENV["TM_FILENAME"] || ENV["TM_FILENAME"] == "")
 	# We hebben geen bestandsnaam, die moeten we dus vragen
@@ -25,7 +25,8 @@ puts &lt;&lt;IETS
 #  
 #  Created by #{me=`whoami`; `finger "#{me.strip}" | sed -n 's/.*Name: \\(.*\\)/\\1/p'`.strip} on #{Date.today}.
 #
-set terminal postscript enhanced eps color
+set term postscript eps enhanced color font "Garamond" 16
+set size 0.7,0.7
 set output '#{plotname}.eps'
 
 ${1:plot '#{plotname}.dat' u 1}$0
