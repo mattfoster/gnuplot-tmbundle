@@ -28,7 +28,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(set|plot|unset)\b</string>
+			<string>\b((un)?set(\s+(term|size|output|title|[xy]label|key(\s+(outside|inside|left|right))?))?|plot)\b</string>
 			<key>name</key>
 			<string>keyword.control.gnuplot</string>
 		</dict>
