@@ -1,7 +1,7 @@
 class GnuplotMate
   
   def path
-    possible_paths = [ENV["TM_GNUPLOT"], `which gnuplot`, "/opt/local/bin/gnuplot", "/sw/bin/gnuplot"]
+    possible_paths = [ENV["TM_GNUPLOT"], `which gnuplot`, "/opt/local/bin/gnuplot", "/sw/bin/gnuplot", "/usr/local/bin/gnuplot"]
     possible_paths.select { |x| x && File.exist?(x) }.first
   end
 
@@ -14,8 +14,8 @@ class GnuplotMate
     # Delete term lines, change output lines to "term aqua" in order to show plots in Aquaterm
     data.gsub!(/^\s+set term.*$/, "")
     plotnum = 0;
-    data.gsub!(/^set output.*$/, "set term aqua #{plotnum += 1}")
-
+    data.gsub!(/^set output.*$/) { "set term aqua #{plotnum += 1}" }
+    puts data
     execute data
   end
 
