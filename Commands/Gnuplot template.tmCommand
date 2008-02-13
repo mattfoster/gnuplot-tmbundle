@@ -11,7 +11,7 @@ require "ui.rb"
 require 'date'
 if (!ENV["TM_FILENAME"] || ENV["TM_FILENAME"] == "")
 	# We hebben geen bestandsnaam, die moeten we dus vragen
-	plotname = Dialog.request_string(
+	plotname = TextMate::UI.request_string(
 		:title =&gt; "Bestandsnaam",
 		:prompt =&gt; "Please enter the name of the new plot:"
 	)
