@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>set zrange [${1:0}:${2:10}]
+$0	</string>
+	<key>name</key>
+	<string>zrange</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>tabTrigger</key>
+	<string>zrange</string>
+	<key>uuid</key>
+	<string>317FB65F-85CB-4E25-A32D-EC4A8DACCA85</string>
+</dict>
+</plist>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Gnuplot</string>
+	<key>ordering</key>
+	<array>
+		<string>A27F93D4-2AE3-4950-851E-8FA19D3CF999</string>
+		<string>1BE99CA7-FDFF-4AAA-BCD7-AA56239ADD9D</string>
+		<string>563CF1ED-8447-4B28-9C9E-89CE1889FB16</string>
+		<string>508102DE-500C-429D-9EE0-1AF1E556CB96</string>
+		<string>5A3DBE06-7304-4B10-84C9-5D392E42971A</string>
+		<string>B52782D2-240F-49DC-A805-328C312AAFAE</string>
+		<string>EB1C98BD-4FD7-4954-AC65-59C24F03ED01</string>
+		<string>23123E30-0455-4231-8A6C-401C8D5E49B2</string>
+		<string>317FB65F-85CB-4E25-A32D-EC4A8DACCA85</string>
+		<string>865B3311-8D43-49B6-8B8B-968574575CA1</string>
+	</array>
+	<key>uuid</key>
+	<string>D36372DA-A9BD-4793-A9BD-94C52AA916EA</string>
+</dict>
+</plist>
