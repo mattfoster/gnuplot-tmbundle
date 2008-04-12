@@ -100,12 +100,21 @@ class GnuplotExpander
 end
 
 if __FILE__ == $0
+  
+  # Looks for a keyword on the command line
+  keyword = ARGV.shift 
+  puts keyword
+  if keyword
+    gnuplot_output = `echo "#{keyword}"| gnuplot 2>&1`
+  else
+    $stderr.puts "Expected keyword as argument."
+    $stderr.puts "Usage: #{File.basename($0)} keyword"
+    exit 1
+  end
+  
   exp = GnuplotExpander.new
   
-  # Try testing for a pipe
-  while line = STDIN.gets
-    puts exp.expand_brackets(line.gsub(/'/, '').gsub(/\s/, '').chomp)
+  gnuplot_output.split(/,|\s/).grep(/'(.*)'/) do
+    puts exp.expand_brackets($1)
   end
-  # puts exp.expand_brackets('{no}{m}[xyz]{2}tics')
-  # puts exp.expand_brackets('{[xyz]{2}}zeroaxis')
 end

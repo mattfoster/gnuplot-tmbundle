@@ -7,6 +7,8 @@
 $0</string>
 	<key>name</key>
 	<string>terminal</string>
+	<key>tabTrigger</key>
+	<string>term</string>
 	<key>uuid</key>
 	<string>508102DE-500C-429D-9EE0-1AF1E556CB96</string>
 </dict>

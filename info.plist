@@ -2,6 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>865B3311-8D43-49B6-8B8B-968574575CA1</string>
+			<string>B52782D2-240F-49DC-A805-328C312AAFAE</string>
+			<string>508102DE-500C-429D-9EE0-1AF1E556CB96</string>
+			<string>563CF1ED-8447-4B28-9C9E-89CE1889FB16</string>
+			<string>EB1C98BD-4FD7-4954-AC65-59C24F03ED01</string>
+			<string>23123E30-0455-4231-8A6C-401C8D5E49B2</string>
+			<string>317FB65F-85CB-4E25-A32D-EC4A8DACCA85</string>
+			<string>------------------------------------</string>
+			<string>5A3DBE06-7304-4B10-84C9-5D392E42971A</string>
+		</array>
+		<key>submenus</key>
+		<dict/>
+	</dict>
 	<key>name</key>
 	<string>Gnuplot</string>
 	<key>ordering</key>
@@ -16,6 +33,8 @@
 		<string>23123E30-0455-4231-8A6C-401C8D5E49B2</string>
 		<string>317FB65F-85CB-4E25-A32D-EC4A8DACCA85</string>
 		<string>865B3311-8D43-49B6-8B8B-968574575CA1</string>
+		<string>19D29C62-F0FD-4171-81DD-D7865CE059E6</string>
+		<string>B6E0CC3E-141E-4A29-85DF-DED76C1129EB</string>
 	</array>
 	<key>uuid</key>
 	<string>D36372DA-A9BD-4793-A9BD-94C52AA916EA</string>

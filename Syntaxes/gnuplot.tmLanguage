@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>gnuplot</string>
+		<string>gp</string>
 	</array>
 	<key>keyEquivalent</key>
 	<string>^~G</string>
@@ -96,16 +97,26 @@
 			<string>keyword.control.gnuplot</string>
 		</dict>
 		<dict>
+			<key>begin</key>
+			<string>\b(set|unset)\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.command.gnuplot</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string> .*$\n</string>
+			<key>name</key>
+			<string>keyword.line.set.gnuplot</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>\b(cd|call|clear|exit|set|unset|plot|splot|help|load|pause|quit|fit|replot|ifFIT_LIMIT|FIT_MAXITER|FIT_START_LAMBDA|FIT_LAMBDA_FACTOR|FIT_LOG|FIT_SCRIPT|print|pwd|reread|reset|save|show|test|!|functions|var)\b</string>
 			<key>name</key>
 			<string>keyword.other.command.gnuplot</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(set|unset)\b</string>
-			<key>name</key>
-			<string>keyword.set.command.gnuplot</string>
 		</dict>
 		<dict>
 			<key>match</key>
