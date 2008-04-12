@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completions: (un)set</string>
+	<key>scope</key>
+	<string>keyword.line.set.gnuplot</string>
+	<key>settings</key>
+	<dict>
+		<key>completionCommand</key>
+		<string>"/Users/matt/Library/Application Support/TextMate/Bundles/Gnuplot.tmbundle/Support/expand_gnuplot.rb" set | grep "^$TM_CURRENT_WORD"|sort|cut -d= -f1</string>
+	</dict>
+	<key>uuid</key>
+	<string>19D29C62-F0FD-4171-81DD-D7865CE059E6</string>
+</dict>
+</plist>
