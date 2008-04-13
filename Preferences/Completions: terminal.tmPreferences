@@ -5,7 +5,7 @@
 	<key>name</key>
 	<string>Completions: terminal</string>
 	<key>scope</key>
-	<string>keyword.line.terminal.gnuplot</string>
+	<string>keyword.line.set.terminal.gnuplot</string>
 	<key>settings</key>
 	<dict>
 		<key>completionCommand</key>

@@ -9,7 +9,7 @@
 	<key>settings</key>
 	<dict>
 		<key>completionCommand</key>
-		<string>"/Users/matt/Library/Application Support/TextMate/Bundles/Gnuplot.tmbundle/Support/expand_gnuplot.rb" set | grep "^$TM_CURRENT_WORD"|sort|cut -d= -f1</string>
+		<string>"$HOME/Library/Application Support/TextMate/Bundles/Gnuplot.tmbundle/Support/expand_gnuplot.rb" set | grep "^$TM_CURRENT_WORD"|sort|cut -d= -f1</string>
 	</dict>
 	<key>uuid</key>
 	<string>19D29C62-F0FD-4171-81DD-D7865CE059E6</string>

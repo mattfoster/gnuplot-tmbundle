@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completions: key</string>
+	<key>scope</key>
+	<string>keyword.line.set.key.gnuplot</string>
+	<key>settings</key>
+	<dict>
+		<key>completions</key>
+		<array>
+			<string>on</string>
+			<string>off</string>
+			<string>default</string>
+			<string>inside</string>
+			<string>outside</string>
+			<string>lmargin</string>
+			<string>rmargin</string>
+			<string>tmargin</string>
+			<string>bmargin</string>
+			<string>at</string>
+			<string>left</string>
+			<string>right</string>
+			<string>center</string>
+			<string>top</string>
+			<string>bottom</string>
+			<string>center</string>
+			<string>vertical</string>
+			<string>horizontal</string>
+			<string>Left</string>
+			<string>Right</string>
+			<string>noreverse</string>
+			<string>noinvert</string>
+			<string>samplen</string>
+			<string>spacing</string>
+			<string>width</string>
+			<string>height</string>
+			<string>noautotitle</string>
+			<string>columnheader</string>
+			<string>title</string>
+			<string>noenhanced</string>
+			<string>nobox</string>
+			<string>linestyle</string>
+			<string>ls</string>
+			<string>linetype</string>
+			<string>lt</string>
+			<string>linewidth</string>
+			<string>lw</string>
+		</array>
+	</dict>
+	<key>uuid</key>
+	<string>C37F00BF-8C39-45FD-97E1-D5AA768094B2</string>
+</dict>
+</plist>

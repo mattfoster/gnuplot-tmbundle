@@ -16,7 +16,16 @@ html_header "Gnuplot Bundle Help" "Gnuplot"
 
 The Gnuplot bundle is a set of snippets and completion commands designed to help you use [Gnuplot](http://www.gnuplot.info/), an incredibly powerful plotting utility.
 
-This bundle attempts to adapt to the many different commands available on different gnuplot builds by using your system's gnuplot binary for completion whereever possible.
+# Completion
+
+This bundle attempts to adapt to the many different commands available on different gnuplot builds by using your system's gnuplot binary for completion where possible. 
+
+This is expecially useful for the commands `set`, `set terminal` and `show`. If you can't remember whether your gnuplot binary supports 'pdf', just type:
+
+&lt;pre&gt;terminal⇥&lt;/pre&gt;
+then press `p`, and press escape to see the possible completion options.
+
+In some cases, gnuplot doesn't print possible options, in which case, completions are either hard coded, or not present. To see where completions are available, see the bundle contents.
 
 # Notes
 

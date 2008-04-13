@@ -110,7 +110,9 @@
 			<key>contentName</key>
 			<string>keyword.line.show.gnuplot</string>
 			<key>end</key>
-			<string>$\n?</string>
+			<string>\n?</string>
+			<key>name</key>
+			<string>keyword.line.show.gnuplot</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -126,7 +128,9 @@
 			<key>contentName</key>
 			<string>keyword.line.plot.gnuplot</string>
 			<key>end</key>
-			<string>$\n?</string>
+			<string>\n?</string>
+			<key>name</key>
+			<string>keyword.line.plot.gnuplot</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -148,6 +152,31 @@
 			<string>keyword.line.terminal.gnuplot</string>
 			<key>end</key>
 			<string>$\n?</string>
+			<key>name</key>
+			<string>keyword.line.set.terminal.gnuplot</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\b(set)\b\s*\b(key)\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.command.gnuplot</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.setting.gnuplot</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>keyword.line.terminal.gnuplot</string>
+			<key>end</key>
+			<string>$\n?</string>
+			<key>name</key>
+			<string>keyword.line.set.key.gnuplot</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -163,7 +192,9 @@
 			<key>contentName</key>
 			<string>keyword.line.set.gnuplot</string>
 			<key>end</key>
-			<string>$\n?</string>
+			<string>.*$\n?</string>
+			<key>name</key>
+			<string>keyword.line.set.gnuplot</string>
 		</dict>
 		<dict>
 			<key>match</key>
