@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#! /bin/sh
+
+echo $TM_CURRENT_LINE | gnuplot 2&gt;&amp;1;</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>Evaluate</string>
+	<key>output</key>
+	<string>afterSelectedText</string>
+	<key>uuid</key>
+	<string>D8CBE542-D110-4232-A8C1-DCC63289FB21</string>
+</dict>
+</plist>

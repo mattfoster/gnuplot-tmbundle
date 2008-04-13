@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Completions: terminal</string>
+	<key>scope</key>
+	<string>keyword.line.terminal.gnuplot</string>
+	<key>settings</key>
+	<dict>
+		<key>completionCommand</key>
+		<string>echo "set terminal" | gnuplot 2&gt;&amp;1 | grep -v "Available terminal types" | grep -v "^$" |awk "{ print \$1 }" | grep "^$TM_CURRENT_WORD"|sort|cut -d= -f1 </string>
+	</dict>
+	<key>uuid</key>
+	<string>FB4DDDB2-EF28-4FD4-9B45-DEC556E134C8</string>
+</dict>
+</plist>

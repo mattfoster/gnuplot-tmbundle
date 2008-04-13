@@ -6,6 +6,9 @@
 # echo set | gnuplot 2>&1 | egrep -o "'.*'" | tr ',' '\n' | \
 # ~/Documents/expand_gnuplot.rb
 # 
+# For a list that can be used in a language grammar, use something like:
+# echo match = \'\\b\($(./expand_gnuplot.rb set | tr -t "\n" "|")\)\\b\'
+#
 # Matt Foster <matt.p.foster@gmail.com>
 
 

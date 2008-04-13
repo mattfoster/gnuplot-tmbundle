@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env bash
+
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+html_header "Gnuplot Bundle Help" "Gnuplot"
+
+"$TM_SUPPORT_PATH/lib/markdown_to_help.rb" &lt;&lt;'MARKDOWN'
+
+# Introduction
+
+The Gnuplot bundle is a set of snippets and completion commands designed to help you use [Gnuplot](http://www.gnuplot.info/), an incredibly powerful plotting utility.
+
+This bundle attempts to adapt to the many different commands available on different gnuplot builds by using your system's gnuplot binary for completion whereever possible.
+
+# Notes
+
+For best results, you'll need TextMate to be able to see a `gnuplot` binary. 
+
+To find out if it can, type: `which gnuplot` into an empty file, and press ⌃R. You should see something like the following:
+
+&lt;pre&gt;which gnuplot
+/usr/local/bin/gnuplot&lt;/pre&gt;
+
+If you don't, then make sure you have gnuplot installed. Typical instalation commands are:
+ * fink install gnuplot-nox
+ * port install gnuplot
+ * installing the Octave Mac OS X build will give you a bundled version of Gnuplot.app. You can use the binary directly by looking in `Gnuplot.app/Contents/Resources/bin/gnuplot`
+
+For information on modifying Textmate's search path, see [this part of the manual](http://macromates.com/textmate/manual/shell_commands#search_path).
+
+MARKDOWN
+
+html_footer
+</string>
+	<key>fallbackInput</key>
+	<string>none</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Help</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>uuid</key>
+	<string>3AB3A528-82D0-4F68-86CA-59CC7F6DCFA9</string>
+</dict>
+</plist>

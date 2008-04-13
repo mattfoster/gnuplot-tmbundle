@@ -98,7 +98,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(set|unset)\b</string>
+			<string>\b(show)\b</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>0</key>
@@ -107,10 +107,69 @@
 					<string>keyword.other.command.gnuplot</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>keyword.line.show.gnuplot</string>
 			<key>end</key>
-			<string> .*$\n</string>
-			<key>name</key>
+			<string>$\n?</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\b(plot)\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.command.gnuplot</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>keyword.line.plot.gnuplot</string>
+			<key>end</key>
+			<string>$\n?</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\b(set)\b\s*\b(terminal)\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.command.gnuplot</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.setting.gnuplot</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
+			<string>keyword.line.terminal.gnuplot</string>
+			<key>end</key>
+			<string>$\n?</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\b(set)\b</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.command.gnuplot</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
 			<string>keyword.line.set.gnuplot</string>
+			<key>end</key>
+			<string>$\n?</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(set|angles|arrow|autoscale|bars|border|boxwidth|clabel|clip|cntrparam|colorbox|contour|decimalsign|dgrid3d|dummy|encoding|fit|format|grid|hidden3d|historysize|isosamples|key|label|locale|logscale|macros|bmargin|lmargin|rmargin|tmargin|mapping|mouse|multiplot|offsets|origin|output|palette|parametric|pm3d|pointsize|polar|print|rrange|trange|urange|vrange|samples|size|style|surface|terminal|tics|ticscale|ticslevel|timestamp|timefmt|title|view|xyplane|x2data|xdata|y2data|ydata|z2data|zdata|x2label|xlabel|y2label|ylabel|z2label|zlabel|x2range|xrange|y2range|yrange|z2range|zrange|mx2tics|mxtics|my2tics|mytics|mz2tics|mztics|nomx2tics|nomxtics|nomy2tics|nomytics|nomz2tics|nomztics|nox2tics|noxtics|noy2tics|noytics|noz2tics|noztics|x2tics|xtics|y2tics|ytics|z2tics|ztics|x2dtics|x2mtics|xdtics|xmtics|y2dtics|y2mtics|ydtics|ymtics|z2dtics|z2mtics|zdtics|zmtics|x2zeroaxis|xzeroaxis|y2zeroaxis|yzeroaxis|z2zeroaxis|zeroaxis|zzeroaxis|zero|)\b</string>
+			<key>name</key>
+			<string>keyword.other.setting.gnuplot</string>
 		</dict>
 		<dict>
 			<key>match</key>
