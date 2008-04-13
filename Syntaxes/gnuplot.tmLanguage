@@ -91,6 +91,21 @@
 			<string>comment.line.number-sign.gnuplot</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>user defined function / variable</string>
+			<key>match</key>
+			<string>(?x:
+			\b # Start with a word boundary
+			(?=\b[\w$]*(\(|.*=))	# Look-ahead for a bracket or equals
+			(					# Group variable name
+				[A-Za-z] 			# A letter
+				[\w$]*	 		# Any word chars or $
+			)					# That is it for the name.
+		)</string>
+			<key>name</key>
+			<string>variable.other.gnuplot</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>\b(if)\b</string>
 			<key>name</key>
