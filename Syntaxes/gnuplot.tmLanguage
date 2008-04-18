@@ -97,6 +97,7 @@
 			<string>(?x:
 			\b # Start with a word boundary
 			(?=\b[\w$]*(\(|.*=))	# Look-ahead for a bracket or equals
+			(?![^(]*\))	# negative look ahead for a closing bracket without an opening one. This stops a from matching in f(a)
 			(					# Group variable name
 				[A-Za-z] 			# A letter
 				[\w$]*	 		# Any word chars or $
@@ -125,7 +126,7 @@
 			<key>contentName</key>
 			<string>keyword.line.show.gnuplot</string>
 			<key>end</key>
-			<string>\n?</string>
+			<string>(?!$\n?)|(?!\#)</string>
 			<key>name</key>
 			<string>keyword.line.show.gnuplot</string>
 		</dict>
@@ -143,7 +144,7 @@
 			<key>contentName</key>
 			<string>keyword.line.plot.gnuplot</string>
 			<key>end</key>
-			<string>\n?</string>
+			<string>(?!$\n?)|(?!\#)</string>
 			<key>name</key>
 			<string>keyword.line.plot.gnuplot</string>
 		</dict>
@@ -166,7 +167,7 @@
 			<key>contentName</key>
 			<string>keyword.line.terminal.gnuplot</string>
 			<key>end</key>
-			<string>$\n?</string>
+			<string>(?!$\n?)|(?!\#)</string>
 			<key>name</key>
 			<string>keyword.line.set.terminal.gnuplot</string>
 		</dict>
@@ -189,7 +190,7 @@
 			<key>contentName</key>
 			<string>keyword.line.terminal.gnuplot</string>
 			<key>end</key>
-			<string>$\n?</string>
+			<string>(?!$\n?)|(?!\#)</string>
 			<key>name</key>
 			<string>keyword.line.set.key.gnuplot</string>
 		</dict>
@@ -207,7 +208,7 @@
 			<key>contentName</key>
 			<string>keyword.line.set.gnuplot</string>
 			<key>end</key>
-			<string>.*$\n?</string>
+			<string>(?!$\n?)|(?!\#)</string>
 			<key>name</key>
 			<string>keyword.line.set.gnuplot</string>
 		</dict>
