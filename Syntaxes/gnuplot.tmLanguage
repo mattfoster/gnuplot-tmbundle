@@ -91,18 +91,54 @@
 			<string>comment.line.number-sign.gnuplot</string>
 		</dict>
 		<dict>
+			<key>match</key>
+			<string>\b(set|angles|arrow|autoscale|bars|border|boxwidth|clabel|clip|cntrparam|colorbox|contour|decimalsign|dgrid3d|dummy|encoding|fit|format|grid|hidden3d|historysize|isosamples|key|label|locale|logscale|macros|bmargin|lmargin|rmargin|tmargin|mapping|mouse|multiplot|offsets|origin|output|palette|parametric|pm3d|pointsize|polar|print|rrange|trange|urange|vrange|samples|size|style|surface|terminal|tics|ticscale|ticslevel|timestamp|timefmt|title|view|xyplane|x2data|xdata|y2data|ydata|z2data|zdata|x2label|xlabel|y2label|ylabel|z2label|zlabel|x2range|xrange|y2range|yrange|z2range|zrange|mx2tics|mxtics|my2tics|mytics|mz2tics|mztics|nomx2tics|nomxtics|nomy2tics|nomytics|nomz2tics|nomztics|nox2tics|noxtics|noy2tics|noytics|noz2tics|noztics|x2tics|xtics|y2tics|ytics|z2tics|ztics|x2dtics|x2mtics|xdtics|xmtics|y2dtics|y2mtics|ydtics|ymtics|z2dtics|z2mtics|zdtics|zmtics|x2zeroaxis|xzeroaxis|y2zeroaxis|yzeroaxis|z2zeroaxis|zeroaxis|zzeroaxis|zero|)\b</string>
+			<key>name</key>
+			<string>keyword.other.setting.gnuplot</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(cd|call|clear|exit|set|unset|plot|splot|help|load|pause|quit|fit|replot|ifFIT_LIMIT|FIT_MAXITER|FIT_START_LAMBDA|FIT_LAMBDA_FACTOR|FIT_LOG|FIT_SCRIPT|print|pwd|reread|reset|save|show|test|!|functions|var)\b</string>
+			<key>name</key>
+			<string>keyword.other.command.gnuplot</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(abs|acos|acosh|arg|asin|asinh|atan|atan2|atanh|besj0|besj1|besy0|besy1|ceil|cos|cosh|erf|erfc|exp|floor|gamma|ibeta|igamma|imag|int|inverf|invnorm|lambertw|lgamma|log|log10|norm|rand|real|sgn|sin|sinh|sqrt|tan|tanh)\b</string>
+			<key>name</key>
+			<string>support.function.gnuplot</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(gprintf|sprintf|strlen|strstrt|substr|system|word|words)\b</string>
+			<key>name</key>
+			<string>support.function.string.gnuplot</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(xdata|timefmt|grid|noytics|ytics|fs|logscale|time|notime|mxtics|nomxtics|style|mcbtics|nologscale|axes|x1y2|unique|acs(plines)?|size|layout|inside|origin|multiplot|xtics|xr(ange)?|yr(ange)?|square|nosquare|ratio|noratio|binary|matrix|index|every|thru|sm(ooth)?|all|angles|degrees|radians|arrow|noarrow|autoscale|noautoscale|arrowstyle|t|ymin|\.\.\.|-|too|much?|vs|autoscale|t|x|y|z|zcb|linear|cubicspline|bspline|order|level(s)?|auto|disc(rete)?|incr(emental)?|from|to|head|nohead|graph|base|both|nosurface|table|out(put)?|data|bar|border|noborder|boxwidth|clabel|noclabel|clip|noclip|cntrp(aram)?|contour|nocontour|dgrid3d|nodgrid3d|dummy|encoding|format|uded|-|yet.|function|grid|nogrid|hidden(3d)?|nohidden(3d)?|isosample(s)?|key|nokey|historysize|nohistorysize|defaults|offset|nooffset|trianglepattern|undefined|noundefined|altdiagonal|bentover|noaltdiagonal|nobentover|left|right|top|bottom|outside|below|samplen|spacing|width|height|box|nobox|linestyle|ls|linetype|lt|linewidth|lw|Left|Right|autotitles|noautotitles|enhanced|noenhanced|isosamples|label|nolabel|logscale|nolog(scale)?|missing|center|font|locale|mapping|margin|bmargin|lmargin|rmargin|tmargin|spherical|cylindrical|cartesian|linestyle|nolinestyle|linetype|lt|linecolor|lc|linewidth|lw|pointtype|pt|pointsize|ps|mouse|nomouse|nooffsets|data|candlesticks|financebars|linespoints|lp|vector|nosurface|term(inal)?|linux|aed767|aed512|gpic|regis|tek410x|tek40|vttek|kc-tek40xx|km-tek40xx|selanar|bitgraph|xlib|x11|X11|aifm|cgm|dumb|fig|gif|small|large|size|nofontlist|winword6|corel|dxf|emf|hpgl|transparent|hp2623a|hp2648|hp500c|pcl5|why|jeh|hp2623a|hp2648|hp500c|pcl5|hpljii|hpdj|hppj|imagen|mif|pbm|png|svg|postscript|enhanced_postscript|qms|table|tgif|tkcanvas|epson-180dpi|epson-60dpi|epson-lx800|nec-cp6|okidata|starc|tandy-60dpi|latex|emtex|pslatex|pstex|epslatex|eepic|tpic|pstricks|texdraw|mf|metafont|mpost|mp|timestamp|notimestamp|variables|version|x2data|y2data|ydata|zdata|reverse|writeback|noreverse|nowriteback|axis|mirror|autofreq|nomirror|rotate|autofreq|norotate|update|multiplot|nomultiplot|mytics|nomytics|mztics|nomztics|mx2tics|nomx2tics|my2tics|nomy2tics|offsets|origin|output|para(metric)?|nopara(metric)?|pointsize|polar|nopolar|zrange|x2range|y2range|rrange|cbrange|trange|urange|vrange|sample(s)?|size|bezier|boxerrorbars|boxes|bargraph|bar(s)?|boxxy(errorbars)?|csplines|dots|fsteps|histeps|impulses|line(s)?|linesp(oints)?|points|poiinttype|sbezier|splines|steps|onal|vectors|xerr(orbars)?|xyerr(orbars)?|yerr(orbars)?|financebars|candlesticks|vector|errorb(ars)?|surface|filledcurve(s)?|pm3d|x1|x2|y1|y2|xy|closed|at|pi|front|errorlines|xerrorlines|yerrorlines|xyerrorlines|tics|ticslevel|ticscale|time|timefmt|view|xdata|xdtics|noxdtics|ydtics|noydtics|zdtics|nozdtics|x2dtics|nox2dtics|y2dtics|noy2dtics|xlab(el)?|ylab(el)?|zlab(el)?|cblab(el)?|x2label|y2label|xmtics|xmtics|noxmtics|ymtics|noymtics|zmtics|nozmtics|x2mtics|nox2mtics|y2mtics|noy2mtics|cbdtics|nocbdtics|cbmtics|nocbmtics|cbtics|nocbtics|xtics|noxtics|ytics|noytics|ztics|noztics|x2tics|nox2tics|y2tics|noy2tics|zero|nozero|zeroaxis|nozeroaxis|xzeroaxis|noxzeroaxis|yzeroaxis|noyzeroaxis|x2zeroaxis|nox2zeroaxis|y2zeroaxis|noy2zeroaxis|angles|one|two|fill|empty|solid|pattern|default|scansautomatic|flush|b(egin)?|noftriangles|implicit|palette|positive|negative|ps_allcF|nops_allcF|maxcolors|push|fontfile|pop|rgbformulae|defined|file|color|model|gradient|colornames|RGB|HSV|CMY|YIQ|XYZ|colorbox|vertical|horizontal|user|bdefault|loadpath|fontpath|decimalsign|in|out|on|off)\b</string>
+			<key>name</key>
+			<string>keyword.other.type.gnuplot</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>\b(u(sing)?|t(it(le)?)?|notit(le)?|w(i(th)?)?|steps|fs(teps)?|notitle|l(i(nes)?)?|linespoints|via)\b</string>
+			<key>name</key>
+			<string>keyword.modifier.gnuplot</string>
+		</dict>
+		<dict>
 			<key>comment</key>
 			<string>user defined function / variable</string>
 			<key>match</key>
 			<string>(?x:
-			\b # Start with a word boundary
-			(?=\b[\w$]*(\(|.*=))	# Look-ahead for a bracket or equals
-			(?![^(]*\))	# negative look ahead for a closing bracket without an opening one. This stops a from matching in f(a)
-			(					# Group variable name
-				[A-Za-z] 			# A letter
-				[\w$]*	 		# Any word chars or $
-			)					# That is it for the name.
-		)</string>
+				\b # Start with a word boundary
+				(?=\b[\w$]*(\(|.*=))	# Look-ahead for a bracket or equals
+				(?![^(]*\))	# negative look ahead for a closing bracket without an opening one. This stops a from matching in f(a)
+				(					# Group variable name
+					[A-Za-z] 			# A letter
+					[\w$]*	 		# Any word chars or $
+				)					# That is it for the name.
+			)</string>
 			<key>name</key>
 			<string>variable.other.gnuplot</string>
 		</dict>
@@ -211,42 +247,6 @@
 			<string>(?!$\n?)|(?!\#)</string>
 			<key>name</key>
 			<string>keyword.line.set.gnuplot</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(set|angles|arrow|autoscale|bars|border|boxwidth|clabel|clip|cntrparam|colorbox|contour|decimalsign|dgrid3d|dummy|encoding|fit|format|grid|hidden3d|historysize|isosamples|key|label|locale|logscale|macros|bmargin|lmargin|rmargin|tmargin|mapping|mouse|multiplot|offsets|origin|output|palette|parametric|pm3d|pointsize|polar|print|rrange|trange|urange|vrange|samples|size|style|surface|terminal|tics|ticscale|ticslevel|timestamp|timefmt|title|view|xyplane|x2data|xdata|y2data|ydata|z2data|zdata|x2label|xlabel|y2label|ylabel|z2label|zlabel|x2range|xrange|y2range|yrange|z2range|zrange|mx2tics|mxtics|my2tics|mytics|mz2tics|mztics|nomx2tics|nomxtics|nomy2tics|nomytics|nomz2tics|nomztics|nox2tics|noxtics|noy2tics|noytics|noz2tics|noztics|x2tics|xtics|y2tics|ytics|z2tics|ztics|x2dtics|x2mtics|xdtics|xmtics|y2dtics|y2mtics|ydtics|ymtics|z2dtics|z2mtics|zdtics|zmtics|x2zeroaxis|xzeroaxis|y2zeroaxis|yzeroaxis|z2zeroaxis|zeroaxis|zzeroaxis|zero|)\b</string>
-			<key>name</key>
-			<string>keyword.other.setting.gnuplot</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(cd|call|clear|exit|set|unset|plot|splot|help|load|pause|quit|fit|replot|ifFIT_LIMIT|FIT_MAXITER|FIT_START_LAMBDA|FIT_LAMBDA_FACTOR|FIT_LOG|FIT_SCRIPT|print|pwd|reread|reset|save|show|test|!|functions|var)\b</string>
-			<key>name</key>
-			<string>keyword.other.command.gnuplot</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(abs|acos|acosh|arg|asin|asinh|atan|atan2|atanh|besj0|besj1|besy0|besy1|ceil|cos|cosh|erf|erfc|exp|floor|gamma|ibeta|igamma|imag|int|inverf|invnorm|lambertw|lgamma|log|log10|norm|rand|real|sgn|sin|sinh|sqrt|tan|tanh)\b</string>
-			<key>name</key>
-			<string>keyword.other.function.gnuplot</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(gprintf|sprintf|strlen|strstrt|substr|system|word|words)\b</string>
-			<key>name</key>
-			<string>keyword.other.function.string.gnuplot</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(xdata|timefmt|grid|noytics|ytics|fs|logscale|time|notime|mxtics|nomxtics|style|mcbtics|nologscale|axes|x1y2|unique|acs(plines)?|size|layout|inside|origin|multiplot|xtics|xr(ange)?|yr(ange)?|square|nosquare|ratio|noratio|binary|matrix|index|every|thru|sm(ooth)?|all|angles|degrees|radians|arrow|noarrow|autoscale|noautoscale|arrowstyle|t|ymin|\.\.\.|-|too|much?|vs|autoscale|t|x|y|z|zcb|linear|cubicspline|bspline|order|level(s)?|auto|disc(rete)?|incr(emental)?|from|to|head|nohead|graph|base|both|nosurface|table|out(put)?|data|bar|border|noborder|boxwidth|clabel|noclabel|clip|noclip|cntrp(aram)?|contour|nocontour|dgrid3d|nodgrid3d|dummy|encoding|format|uded|-|yet.|function|grid|nogrid|hidden(3d)?|nohidden(3d)?|isosample(s)?|key|nokey|historysize|nohistorysize|defaults|offset|nooffset|trianglepattern|undefined|noundefined|altdiagonal|bentover|noaltdiagonal|nobentover|left|right|top|bottom|outside|below|samplen|spacing|width|height|box|nobox|linestyle|ls|linetype|lt|linewidth|lw|Left|Right|autotitles|noautotitles|enhanced|noenhanced|isosamples|label|nolabel|logscale|nolog(scale)?|missing|center|font|locale|mapping|margin|bmargin|lmargin|rmargin|tmargin|spherical|cylindrical|cartesian|linestyle|nolinestyle|linetype|lt|linecolor|lc|linewidth|lw|pointtype|pt|pointsize|ps|mouse|nomouse|nooffsets|data|candlesticks|financebars|linespoints|lp|vector|nosurface|term(inal)?|linux|aed767|aed512|gpic|regis|tek410x|tek40|vttek|kc-tek40xx|km-tek40xx|selanar|bitgraph|xlib|x11|X11|aifm|cgm|dumb|fig|gif|small|large|size|nofontlist|winword6|corel|dxf|emf|hpgl|transparent|hp2623a|hp2648|hp500c|pcl5|why|jeh|hp2623a|hp2648|hp500c|pcl5|hpljii|hpdj|hppj|imagen|mif|pbm|png|svg|postscript|enhanced_postscript|qms|table|tgif|tkcanvas|epson-180dpi|epson-60dpi|epson-lx800|nec-cp6|okidata|starc|tandy-60dpi|latex|emtex|pslatex|pstex|epslatex|eepic|tpic|pstricks|texdraw|mf|metafont|mpost|mp|timestamp|notimestamp|variables|version|x2data|y2data|ydata|zdata|reverse|writeback|noreverse|nowriteback|axis|mirror|autofreq|nomirror|rotate|autofreq|norotate|update|multiplot|nomultiplot|mytics|nomytics|mztics|nomztics|mx2tics|nomx2tics|my2tics|nomy2tics|offsets|origin|output|para(metric)?|nopara(metric)?|pointsize|polar|nopolar|zrange|x2range|y2range|rrange|cbrange|trange|urange|vrange|sample(s)?|size|bezier|boxerrorbars|boxes|bargraph|bar(s)?|boxxy(errorbars)?|csplines|dots|fsteps|histeps|impulses|line(s)?|linesp(oints)?|points|poiinttype|sbezier|splines|steps|onal|vectors|xerr(orbars)?|xyerr(orbars)?|yerr(orbars)?|financebars|candlesticks|vector|errorb(ars)?|surface|filledcurve(s)?|pm3d|x1|x2|y1|y2|xy|closed|at|pi|front|errorlines|xerrorlines|yerrorlines|xyerrorlines|tics|ticslevel|ticscale|time|timefmt|view|xdata|xdtics|noxdtics|ydtics|noydtics|zdtics|nozdtics|x2dtics|nox2dtics|y2dtics|noy2dtics|xlab(el)?|ylab(el)?|zlab(el)?|cblab(el)?|x2label|y2label|xmtics|xmtics|noxmtics|ymtics|noymtics|zmtics|nozmtics|x2mtics|nox2mtics|y2mtics|noy2mtics|cbdtics|nocbdtics|cbmtics|nocbmtics|cbtics|nocbtics|xtics|noxtics|ytics|noytics|ztics|noztics|x2tics|nox2tics|y2tics|noy2tics|zero|nozero|zeroaxis|nozeroaxis|xzeroaxis|noxzeroaxis|yzeroaxis|noyzeroaxis|x2zeroaxis|nox2zeroaxis|y2zeroaxis|noy2zeroaxis|angles|one|two|fill|empty|solid|pattern|default|scansautomatic|flush|b(egin)?|noftriangles|implicit|palette|positive|negative|ps_allcF|nops_allcF|maxcolors|push|fontfile|pop|rgbformulae|defined|file|color|model|gradient|colornames|RGB|HSV|CMY|YIQ|XYZ|colorbox|vertical|horizontal|user|bdefault|loadpath|fontpath|decimalsign|in|out|on|off)\b</string>
-			<key>name</key>
-			<string>keyword.other.type.gnuplot</string>
-		</dict>
-		<dict>
-			<key>match</key>
-			<string>\b(u(sing)?|t(it(le)?)?|notit(le)?|w(i(th)?)?|steps|fs(teps)?|notitle|l(i(nes)?)?|linespoints|via)\b</string>
-			<key>name</key>
-			<string>keyword.modifier.gnuplot</string>
 		</dict>
 	</array>
 	<key>repository</key>
