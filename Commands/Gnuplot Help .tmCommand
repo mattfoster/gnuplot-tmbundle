@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveActiveFile</string>
+	<key>command</key>
+	<string># interim help function.
+
+word=${TM_SELECTED_TEXT:-$TM_CURRENT_WORD}
+
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+html_header "Gnuplot Help" "Gnuplot"
+
+
+TITLE="## Gnuplot help for $word ##"
+HEAD="&lt;p&gt;"
+HELP=$(export PAGER=cat; echo help $word | gnuplot 2&gt;&amp;1 | sed -E -e 's/^$/&lt;\/p\&gt;\&lt;p\&gt;/' \
+-e 's/^.*Syntax:.*$/### Syntax ###\
+/' \
+ -e 's/^.*Example(s)?:.*$/### Examples ###\
+/' \
+ \
+ -e 's/^.*See also[[:space:]]*/### See Also ###\
+/' \
+ -e 's/^.*Subtopics available for .*:/### Subtopics ###\
+/')
+
+
+echo -e "$TITLE\n\n$HEAD\n$HELP" | "$TM_SUPPORT_PATH/lib/markdown_to_help.rb"</string>
+	<key>fallbackInput</key>
+	<string>word</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>^h</string>
+	<key>name</key>
+	<string>Gnuplot Help </string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>uuid</key>
+	<string>26A04D04-F5BE-4659-AD78-FFD0AEB38FD7</string>
+</dict>
+</plist>
