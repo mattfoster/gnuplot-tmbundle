@@ -12,6 +12,6 @@ if __FILE__ == $0
   word = ARGV.shift || STDIN.read
   
   help = convert(word)
-  bc = BlueCloth.new(help)
+  bc = BlueCloth.new(htmlize(help))
   puts bc.to_html
 end
