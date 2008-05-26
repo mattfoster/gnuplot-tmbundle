@@ -5,29 +5,76 @@
 	<key>beforeRunningCommand</key>
 	<string>saveActiveFile</string>
 	<key>command</key>
-	<string># interim help function.
+	<string>#! /usr/bin/env ruby -w
 
-word=${TM_SELECTED_TEXT:-$TM_CURRENT_WORD}
+$LOAD_PATH &lt;&lt; "#{ENV['TM_SUPPORT_PATH']}/lib"
+$LOAD_PATH &lt;&lt; "#{ENV['TM_BUNDLE_SUPPORT']}/lib"
+require 'web_preview'
+require 'escape' 
+require 'bluecloth'
 
-. "$TM_SUPPORT_PATH/lib/webpreview.sh"
-html_header "Gnuplot Help" "Gnuplot"
-
-
-TITLE="## Gnuplot help for $word ##"
-HEAD="&lt;p&gt;"
-HELP=$(export PAGER=cat; echo help $word | gnuplot 2&gt;&amp;1 | sed -E -e 's/^$/&lt;\/p\&gt;\&lt;p\&gt;/' \
--e 's/^.*Syntax:.*$/### Syntax ###\
-/' \
- -e 's/^.*Example(s)?:.*$/### Examples ###\
-/' \
- \
- -e 's/^.*See also[[:space:]]*/### See Also ###\
-/' \
- -e 's/^.*Subtopics available for .*:/### Subtopics ###\
-/')
+word = ENV['TM_SELECTED_TEXT'] || ENV['TM_CURRENT_WORD']
 
 
-echo -e "$TITLE\n\n$HEAD\n$HELP" | "$TM_SUPPORT_PATH/lib/markdown_to_help.rb"</string>
+output = `export PAGER=cat; echo help #{word} | gnuplot 2&gt;&amp;1`
+
+# Exit if there was an errror running gnuplot:
+unless $? == 0
+  puts "Error running gnuplot help command." 
+  exit
+end
+
+# Determine the title as needed.
+unless word.nil?
+  help = "## Help for \'#{word}\'\n"
+else
+  help = "## Introduction\n"
+end
+
+html_header "Gnuplot online help"
+
+# If this is the case, then the next lines (until the end) need to be indented
+# and made into links.
+unless output.grep(/possible matches:$/).empty?
+
+  puts &lt;&lt;-END  
+  &lt;script&gt;function help (arg) {
+    var cmd = "get_gnuplot_help.rb '" + arg + "'";
+    var res = TextMate.system(cmd, null).outputString;
+    document.getElementById("output").innerHTML = res;
+    window.location.hash = "output";
+  }
+
+  function run_search () {
+    var com = document.f.com.value;
+    
+    document.f.com.value = "";
+    var cmd = "get_gnuplot_help.rb '" + com + "'";
+    var res = TextMate.system(cmd, null).outputString;
+    document.getElementById("output").innerHTML = res;
+    window.location.hash = "output";
+  }
+  &lt;/script&gt;&lt;h2&gt;Ambiguous topic: '#{word}'&lt;/h2&gt;&lt;p&gt;Possible matches:&lt;/p&gt;
+  &lt;ul&gt;
+  END
+
+  output.grep(/^(?&gt;\t\b(.*)\b$)/) do |word|
+    puts "&lt;li&gt;&lt;a onClick=\'help(\"#{$1}\")\'&gt;#{$1}&lt;/a&gt;&lt;/li&gt;"
+  end
+  
+  puts "&lt;li&gt;&lt;form id=\"input_form\" name=\"f\" onsubmit=\"javascript: run_search(); return false\" action=\"#\"&gt;"
+  puts "&lt;input maxlength=\"256\" size=\"20\" name=\"com\" value=\"\"&gt;"
+  puts "&lt;input value=\"Search\" type=\"submit\"&gt;&lt;/li&gt;"
+  puts "&lt;/ul&gt;&lt;hr&gt;&lt;div id=\"output\"&gt;&lt;/div&gt;"
+
+else
+  help &lt;&lt; htmlize(output)
+  bc = BlueCloth.new(help)
+  puts bc.to_html
+end
+
+html_footer
+</string>
 	<key>fallbackInput</key>
 	<string>word</string>
 	<key>input</key>
@@ -35,7 +82,7 @@ echo -e "$TITLE\n\n$HEAD\n$HELP" | "$TM_SUPPORT_PATH/lib/markdown_to_help.rb"</s
 	<key>keyEquivalent</key>
 	<string>^h</string>
 	<key>name</key>
-	<string>Gnuplot Help </string>
+	<string>0nline help </string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>
