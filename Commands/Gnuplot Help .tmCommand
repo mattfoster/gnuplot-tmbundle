@@ -15,7 +15,6 @@ require 'bluecloth'
 
 word = ENV['TM_SELECTED_TEXT'] || ENV['TM_CURRENT_WORD']
 
-
 output = `export PAGER=cat; echo help #{word} | gnuplot 2&gt;&amp;1`
 
 # Exit if there was an errror running gnuplot:
@@ -68,7 +67,7 @@ unless output.grep(/possible matches:$/).empty?
   puts "&lt;/ul&gt;&lt;hr&gt;&lt;div id=\"output\"&gt;&lt;/div&gt;"
 
 else
-  help &lt;&lt; htmlize(output)
+  help &lt;&lt; htmlize(output)  
   bc = BlueCloth.new(help)
   puts bc.to_html
 end

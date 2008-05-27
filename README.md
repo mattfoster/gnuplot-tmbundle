@@ -9,16 +9,17 @@ So far, various features have been implemented, including:
 
   * Rudimentary syntax hilighting.
   * Script execution -- pressing ' ⌘R' pipes the script through gnuplot.
-  * Online help -- pressing '⌃H' with the caret over a keyword pops up an 
-		HTML window containing gnuplot's built-in help for that keyword.
+  * Online help -- pressing '⌃H' with the caret over a keyword pops up an HTML window containing gnuplot's built-in help for that keyword.
+  
+There are a cople of issus with the help, see the end of the `fillstyle` entry, for example, but these are minor, and seem to be due to bugs in bluecloth.
 
 Future work will be focused on providing completion, and improving the help
 command -- especially formatting of the output.
 
 ## Links
 
-[Home page](http://github.com/mattfoster/gnuplot-tmbundle/)
-[Google Group](http://groups.google.com/group/gnuplot-tmundle)
+  *  [Home page](http://github.com/mattfoster/gnuplot-tmbundle/)
+  * [Google Group](http://groups.google.com/group/gnuplot-tmundle)
 
 ## Installation:
 
