@@ -32,30 +32,31 @@ end
 
 html_header "Gnuplot online help"
 
+puts &lt;&lt;-END  
+&lt;script&gt;function help (arg) {
+  var cmd = "get_gnuplot_help.rb '" + arg + "'";
+  var res = TextMate.system(cmd, null).outputString;
+  document.getElementById("output").innerHTML = res;
+  window.location.hash = "output";
+}
+
+function run_search () {
+  var com = document.f.com.value;
+  
+  document.f.com.value = "";
+  var cmd = "get_gnuplot_help.rb '" + com + "'";
+  var res = TextMate.system(cmd, null).outputString;
+  document.getElementById("output").innerHTML = res;
+  window.location.hash = "output";
+}
+&lt;/script&gt;
+END
+
 # If this is the case, then the next lines (until the end) need to be indented
 # and made into links.
 unless output.grep(/possible matches:$/).empty?
 
-  puts &lt;&lt;-END  
-  &lt;script&gt;function help (arg) {
-    var cmd = "get_gnuplot_help.rb '" + arg + "'";
-    var res = TextMate.system(cmd, null).outputString;
-    document.getElementById("output").innerHTML = res;
-    window.location.hash = "output";
-  }
-
-  function run_search () {
-    var com = document.f.com.value;
-    
-    document.f.com.value = "";
-    var cmd = "get_gnuplot_help.rb '" + com + "'";
-    var res = TextMate.system(cmd, null).outputString;
-    document.getElementById("output").innerHTML = res;
-    window.location.hash = "output";
-  }
-  &lt;/script&gt;&lt;h2&gt;Ambiguous topic: '#{word}'&lt;/h2&gt;&lt;p&gt;Possible matches:&lt;/p&gt;
-  &lt;ul&gt;
-  END
+  puts "&lt;h2&gt;Ambiguous topic: '#{word}'&lt;/h2&gt;&lt;p&gt;Possible matches:&lt;/p&gt;&lt;ul&gt;"
 
   output.grep(/^(?&gt;\t\b(.*)\b$)/) do |word|
     puts "&lt;li&gt;&lt;a onClick=\'help(\"#{$1}\")\'&gt;#{$1}&lt;/a&gt;&lt;/li&gt;"
@@ -67,6 +68,12 @@ unless output.grep(/possible matches:$/).empty?
   puts "&lt;/ul&gt;&lt;hr&gt;&lt;div id=\"output\"&gt;&lt;/div&gt;"
 
 else
+  puts "&lt;h2&gt;Search Help:&lt;/h2&gt;&lt;ul&gt;"
+  puts "&lt;li&gt;&lt;form id=\"input_form\" name=\"f\" onsubmit=\"javascript: run_search(); return false\" action=\"#\"&gt;"
+  puts "&lt;input maxlength=\"256\" size=\"20\" name=\"com\" value=\"\"&gt;"
+  puts "&lt;input value=\"Search\" type=\"submit\"&gt;&lt;/li&gt;"
+  puts "&lt;/ul&gt;&lt;hr&gt;&lt;div id=\"output\"&gt;&lt;/div&gt;"
+  
   help &lt;&lt; htmlize(output)  
   bc = BlueCloth.new(help)
   puts bc.to_html
