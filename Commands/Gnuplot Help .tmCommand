@@ -10,8 +10,7 @@
 $LOAD_PATH &lt;&lt; "#{ENV['TM_SUPPORT_PATH']}/lib"
 $LOAD_PATH &lt;&lt; "#{ENV['TM_BUNDLE_SUPPORT']}/lib"
 require 'web_preview'
-require 'escape' 
-require 'bluecloth'
+require 'TextMate'
 
 word = ENV['TM_SELECTED_TEXT'] || ENV['TM_CURRENT_WORD']
 
@@ -20,6 +19,7 @@ output = `export PAGER=cat; echo help #{word} | gnuplot 2&gt;&amp;1`
 # Exit if there was an errror running gnuplot:
 unless $? == 0
   puts "Error running gnuplot help command." 
+  puts output
   exit
 end
 
@@ -30,54 +30,118 @@ else
   help = "## Introduction\n"
 end
 
-html_header "Gnuplot online help"
+# html_header "Gnuplot online help"
 
-puts &lt;&lt;-END  
-&lt;script&gt;function help (arg) {
-  var cmd = "get_gnuplot_help.rb '" + arg + "'";
-  var res = TextMate.system(cmd, null).outputString;
-  document.getElementById("output").innerHTML = res;
-  window.location.hash = "output";
-}
+puts &lt;&lt;-END
+&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd"&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;meta http-equiv="Content-type" content="text/html; charset=utf-8"&gt;
+	&lt;title&gt;Gnuplot Help&lt;/title&gt;
+	&lt;style type="text/css"&gt; 
+	
+	#search {
+	  float: right;
+	  text-align: right;
+	}
+	
+	#search input {
+	  padding-left 1em;
+  }
 
-function run_search () {
-  var com = document.f.com.value;
+  a {
+	text-decoration: underline;
+  }
   
-  document.f.com.value = "";
-  var cmd = "get_gnuplot_help.rb '" + com + "'";
-  var res = TextMate.system(cmd, null).outputString;
-  document.getElementById("output").innerHTML = res;
-  window.location.hash = "output";
-}
-&lt;/script&gt;
+  #title {
+    float: left;
+    text-align: left;
+  }
+  .clear{
+    clear: both;
+  }
+  
+  pre {
+    width: 98%;
+    border: thin solid gray;
+    background: black;
+    color: #bbb;
+    padding: 1%;
+  }
+  
+	&lt;/style&gt;  
+  &lt;script&gt;
+  function help (arg) {
+    var cmd = "get_gnuplot_help.rb '" + arg + "'";
+    var res = TextMate.system(cmd, null).outputString;
+    document.getElementById("output").innerHTML = res;
+    window.location.hash = "output";
+  }
+
+  function run_search () {
+    var com = document.f.com.value;
+  
+    document.f.com.value = "";
+    var cmd = "get_gnuplot_help.rb '" + com + "'";
+    var res = TextMate.system(cmd, null).outputString;
+    document.getElementById("output").innerHTML = res;
+    window.location.hash = "output";
+  }
+  &lt;/script&gt;
+&lt;/head&gt;
+&lt;div id="title"&gt;
+  Gnuplot Help
+&lt;/div&gt;
+&lt;div id="search"&gt;
+  &lt;form id="input_form" name="f" onsubmit="javascript: run_search(); return false" action="#"&gt;
+  Search:&lt;input maxlength="256" size="20" name="com" value=""&gt;
+  &lt;input value="Search" type="submit"&gt;
+&lt;/div&gt;
+
+&lt;div class="clear"&gt;
+&lt;hr&gt;
+&lt;/div&gt;
 END
 
 # If this is the case, then the next lines (until the end) need to be indented
 # and made into links.
 unless output.grep(/possible matches:$/).empty?
-
+  
+  puts "&lt;div id=\"output\"&gt;"
+  
   puts "&lt;h2&gt;Ambiguous topic: '#{word}'&lt;/h2&gt;&lt;p&gt;Possible matches:&lt;/p&gt;&lt;ul&gt;"
 
   output.grep(/^(?&gt;\t\b(.*)\b$)/) do |word|
     puts "&lt;li&gt;&lt;a onClick=\'help(\"#{$1}\")\'&gt;#{$1}&lt;/a&gt;&lt;/li&gt;"
   end
   
-  puts "&lt;li&gt;&lt;form id=\"input_form\" name=\"f\" onsubmit=\"javascript: run_search(); return false\" action=\"#\"&gt;"
-  puts "&lt;input maxlength=\"256\" size=\"20\" name=\"com\" value=\"\"&gt;"
-  puts "&lt;input value=\"Search\" type=\"submit\"&gt;&lt;/li&gt;"
-  puts "&lt;/ul&gt;&lt;hr&gt;&lt;div id=\"output\"&gt;&lt;/div&gt;"
-
-else
-  puts "&lt;h2&gt;Search Help:&lt;/h2&gt;&lt;ul&gt;"
-  puts "&lt;li&gt;&lt;form id=\"input_form\" name=\"f\" onsubmit=\"javascript: run_search(); return false\" action=\"#\"&gt;"
-  puts "&lt;input maxlength=\"256\" size=\"20\" name=\"com\" value=\"\"&gt;"
-  puts "&lt;input value=\"Search\" type=\"submit\"&gt;&lt;/li&gt;"
-  puts "&lt;/ul&gt;&lt;hr&gt;&lt;div id=\"output\"&gt;&lt;/div&gt;"
+  puts "&lt;/ul&gt;"
   
-  help &lt;&lt; htmlize(output)  
-  bc = BlueCloth.new(help)
-  puts bc.to_html
+else
+
+  puts "&lt;div id=\"output\"&gt;"
+  
+  output.gsub!(/^\s*Syntax:\s*$/, "\n### Syntax\n")
+  output.gsub!(/^\s*Examples:\s*$/, "\n### Examples\n")
+  output.gsub!(/^\s*Example:\s*$/, "\n#### Example\n")
+  output.gsub!(/^\s*Subtopics available for .*:\s*$/, "\n#### Subtopics\n")
+  output.gsub!(/^\s*See also/, "\n#### See Also\n\t")
+  
+  # help &lt;&lt; htmlize(output) # Shouldn't bluecloth do this.  
+
+  help &lt;&lt; output
+  begin 
+    puts TextMate::Markdown.to_html(help)
+  rescue NameError
+    require 'bluecloth'
+    puts BlueCloth.new( help ).to_html( :markdown )
+  end
+
+    
 end
+
+puts "&lt;/div&gt;"
 
 html_footer
 </string>
