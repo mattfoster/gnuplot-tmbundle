@@ -4,7 +4,8 @@
 
 module Gnuplot
   def convert(word = '')
-    
+    require 'cgi'
+        
     # Determine the title as needed.
     unless word.nil?
       help = "## Help for \'#{word}\'\n"
@@ -21,23 +22,29 @@ module Gnuplot
       puts output
       exit
     end
+    
+    help = help.split("\n")
 
+    help.each_with_index do |line, ii|      
+      # Escape lines which aren't indented enough to be code blocks.
+      if line =~ /^\s\s?\S/
+        line = CGI.escapeHTML(line)
+      end
+      # Convert words inside backticks to clicable links, if they follow 'See also'
+      if line =~ /^\s*See also/
+        line.gsub!(/`(.*?)`./, '  * <a onClick=\'help("\1")\'>\1</a>')
+      end 
+      help[ii] = line
+    end
+        
+    help = help.join("\n")
+    
     help.gsub!(/^\s*Syntax:\s*$/, "\n### Syntax\n")
     help.gsub!(/^\s*Examples:\s*$/, "\n### Examples\n")
     help.gsub!(/^\s*Example:\s*$/, "\n#### Example\n")
     help.gsub!(/^\s*Subtopics available for .*:\s*$/, "\n#### Subtopics\n")
-    help.gsub!(/^\s*See also/, "\n#### See Also\n\t")
-
-    help = help.split("\n")
-
-    # Escape lines which aren't indented enough to be considered <pre> blocks
-    help.each_with_index do |line, ii|
-      if line =~ /^\s\s?\S/
-        require 'cgi'
-        help[ii] = CGI.escapeHTML(line)
-      end
-    end
-    help = help.join("\n")
+    help.gsub!(/^\s*See also/, "\n#### See Also\n")
+    
   end
   
   def header
