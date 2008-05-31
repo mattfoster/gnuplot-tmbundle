@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/bin/bash
+
+. "$TM_SUPPORT_PATH/lib/webpreview.sh"
+
+html_header "Gnuplot Default Settings"
+
+cat &lt;&lt;- EOH
+    	&lt;style type="text/css"&gt; 
+
+	div.clear {
+		clear: both;
+	}
+
+    	#search {
+    	  float: right;
+    	  text-align: right;
+       height: 2em;
+    	}
+
+    	#search input {
+    	  padding-left 5px;
+      }
+
+    	&lt;/style&gt;  
+      &lt;script&gt;
+      function help (arg) {
+        var cmd = "get_gnuplot_help.rb '" + arg + "'";
+        var res = TextMate.system(cmd, null).outputString;
+        document.getElementById("output").innerHTML = res;
+        window.location.hash = "output";
+      }
+
+      function run_search () {
+        var com = document.f.com.value;
+
+        document.f.com.value = "";
+        var cmd = "get_gnuplot_help.rb '" + com + "'";
+        var res = TextMate.system(cmd, null).outputString;
+        document.getElementById("output").innerHTML = res;
+        window.location.hash = "output";
+      }
+      &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;div id="search"&gt;
+      &lt;form id="input_form" name="f" onsubmit="javascript: run_search(); return false" action="#"&gt;
+      Search:&lt;input maxlength="256" size="20" name="com" value=""&gt;
+      &lt;input value="Search" type="submit"&gt;
+    &lt;/div&gt;
+
+    &lt;div class="clear"&gt;
+    &lt;hr&gt;
+    &lt;/div&gt;
+	&lt;div id="output"&gt;
+	&lt;pre class="show"&gt;
+EOH
+
+echo show all| gnuplot 2&gt;&amp;1| sed -e 's/^	//g'
+
+echo "&lt;/pre&gt;&lt;/div&gt;"
+
+html_footer</string>
+	<key>input</key>
+	<string>none</string>
+	<key>name</key>
+	<string>Show defaults</string>
+	<key>output</key>
+	<string>showAsHTML</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>uuid</key>
+	<string>7FECE861-47EA-4EF1-8052-0A85B6F74369</string>
+</dict>
+</plist>

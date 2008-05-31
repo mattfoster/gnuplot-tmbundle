@@ -52,12 +52,6 @@ module Gnuplot
   
   def header
     header = <<-END
-    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-    	"http://www.w3.org/TR/html4/strict.dtd">
-    <html>
-    <head>
-    	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-    	<title>Gnuplot Help</title>
     	<style type="text/css"> 
 
     	#search {
@@ -82,14 +76,6 @@ module Gnuplot
         clear: both;
       }
 
-      pre {
-        width: 98%;
-        border: thin solid gray;
-        background: black;
-        color: #bbb;
-        padding: 1%;
-      }
-
     	</style>  
       <script>
       function help (arg) {
@@ -110,9 +96,6 @@ module Gnuplot
       }
       </script>
     </head>
-    <div id="title">
-      Gnuplot Help
-    </div>
     <div id="search">
       <form id="input_form" name="f" onsubmit="javascript: run_search(); return false" action="#">
       Search:<input maxlength="256" size="20" name="com" value="">

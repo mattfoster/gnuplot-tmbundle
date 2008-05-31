@@ -11,7 +11,7 @@ echo $TM_CURRENT_LINE | gnuplot 2&gt;&amp;1;</string>
 	<key>input</key>
 	<string>selection</string>
 	<key>name</key>
-	<string>Evaluate</string>
+	<string>Evaluate line</string>
 	<key>output</key>
 	<string>afterSelectedText</string>
 	<key>uuid</key>
