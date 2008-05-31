@@ -39,12 +39,15 @@ module Gnuplot
         
     help = help.join("\n")
     
+    # Replace things that should be heading titles
     help.gsub!(/^\s*Syntax:\s*$/, "\n### Syntax\n")
     help.gsub!(/^\s*Examples:\s*$/, "\n### Examples\n")
     help.gsub!(/^\s*Example:\s*$/, "\n#### Example\n")
     help.gsub!(/^\s*Subtopics available for .*:\s*$/, "\n#### Subtopics\n")
     help.gsub!(/^\s*See also/, "\n#### See Also\n")
     
+    # Make sure this always gets returned.
+    help
   end
   
   def header
