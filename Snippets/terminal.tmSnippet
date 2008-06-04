@@ -3,13 +3,16 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>set terminal $1
+	<string>set terminal ${1:aqua} 
+set output "${2:${1/(aqua|x11)|.+/(?1:STDOUT)/}}"
 $0</string>
 	<key>name</key>
 	<string>terminal</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
 	<key>tabTrigger</key>
 	<string>term</string>
 	<key>uuid</key>
-	<string>508102DE-500C-429D-9EE0-1AF1E556CB96</string>
+	<string>B2C213F0-0467-4EFD-8E3D-DC252575A6EB</string>
 </dict>
 </plist>

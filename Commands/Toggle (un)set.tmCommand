@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+
+print case str = STDIN.read
+  # Handle standard quotes
+  when /\Aset\b(.*)$/: 'unset' + $1  
+  when /\Aunset\b(.*)$/: 'set' + $1
+  # Default case
+  else str
+end
+</string>
+	<key>fallbackInput</key>
+	<string>line</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@S</string>
+	<key>name</key>
+	<string>Toggle (un)set</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>uuid</key>
+	<string>916A0D99-D0DD-4E6A-B960-1BF5E8CB9DC3</string>
+</dict>
+</plist>
