@@ -60,7 +60,7 @@ html_footer
 	<key>keyEquivalent</key>
 	<string>^h</string>
 	<key>name</key>
-	<string>0nline help </string>
+	<string>Documentation for Current Word</string>
 	<key>output</key>
 	<string>showAsHTML</string>
 	<key>scope</key>

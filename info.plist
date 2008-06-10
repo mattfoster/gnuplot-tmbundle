@@ -6,6 +6,13 @@
 	<dict>
 		<key>items</key>
 		<array>
+			<string>5A3DBE06-7304-4B10-84C9-5D392E42971A</string>
+			<string>D8CBE542-D110-4232-A8C1-DCC63289FB21</string>
+			<string>------------------------------------</string>
+			<string>26A04D04-F5BE-4659-AD78-FFD0AEB38FD7</string>
+			<string>137F421D-CC85-453C-B96F-15182493C862</string>
+			<string>916A0D99-D0DD-4E6A-B960-1BF5E8CB9DC3</string>
+			<string>------------------------------------</string>
 			<string>865B3311-8D43-49B6-8B8B-968574575CA1</string>
 			<string>B52782D2-240F-49DC-A805-328C312AAFAE</string>
 			<string>B2C213F0-0467-4EFD-8E3D-DC252575A6EB</string>
@@ -13,17 +20,32 @@
 			<string>EB1C98BD-4FD7-4954-AC65-59C24F03ED01</string>
 			<string>23123E30-0455-4231-8A6C-401C8D5E49B2</string>
 			<string>317FB65F-85CB-4E25-A32D-EC4A8DACCA85</string>
+			<string>C2F814B6-3392-405E-9974-124B9A24AAE0</string>
 			<string>------------------------------------</string>
-			<string>5A3DBE06-7304-4B10-84C9-5D392E42971A</string>
-			<string>D8CBE542-D110-4232-A8C1-DCC63289FB21</string>
-			<string>------------------------------------</string>
-			<string>26A04D04-F5BE-4659-AD78-FFD0AEB38FD7</string>
-			<string>3AB3A528-82D0-4F68-86CA-59CC7F6DCFA9</string>
 			<string>7FECE861-47EA-4EF1-8052-0A85B6F74369</string>
-			<string>916A0D99-D0DD-4E6A-B960-1BF5E8CB9DC3</string>
+			<string>------------------------------------</string>
+			<string>3AB3A528-82D0-4F68-86CA-59CC7F6DCFA9</string>
 		</array>
 		<key>submenus</key>
-		<dict/>
+		<dict>
+			<key>C2F814B6-3392-405E-9974-124B9A24AAE0</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>629906FE-5D28-418C-81E8-8E3D3C24686D</string>
+					<string>DC9D118E-3657-4421-A8EB-60B88B6ABBB4</string>
+					<string>528A73E5-562A-46B3-B685-E5EC24582C13</string>
+					<string>366615EA-D5F6-4D26-B048-2ECCE60AF0C9</string>
+					<string>CF75EAE6-ADBE-413D-9E58-C63D31E0352E</string>
+					<string>E894E9CE-C694-439E-849E-F1F17FBDBA16</string>
+					<string>------------------------------------</string>
+					<string>FE094DB9-17E4-4544-A486-7DD875E91E3B</string>
+					<string>8DF4EA28-1DCA-4CBD-97EA-04AFD8B9089D</string>
+				</array>
+				<key>name</key>
+				<string>Paper sizes</string>
+			</dict>
+		</dict>
 	</dict>
 	<key>name</key>
 	<string>Gnuplot</string>
@@ -41,6 +63,14 @@
 		<string>23123E30-0455-4231-8A6C-401C8D5E49B2</string>
 		<string>317FB65F-85CB-4E25-A32D-EC4A8DACCA85</string>
 		<string>865B3311-8D43-49B6-8B8B-968574575CA1</string>
+		<string>366615EA-D5F6-4D26-B048-2ECCE60AF0C9</string>
+		<string>FE094DB9-17E4-4544-A486-7DD875E91E3B</string>
+		<string>8DF4EA28-1DCA-4CBD-97EA-04AFD8B9089D</string>
+		<string>E894E9CE-C694-439E-849E-F1F17FBDBA16</string>
+		<string>CF75EAE6-ADBE-413D-9E58-C63D31E0352E</string>
+		<string>528A73E5-562A-46B3-B685-E5EC24582C13</string>
+		<string>629906FE-5D28-418C-81E8-8E3D3C24686D</string>
+		<string>DC9D118E-3657-4421-A8EB-60B88B6ABBB4</string>
 		<string>19D29C62-F0FD-4171-81DD-D7865CE059E6</string>
 		<string>C37F00BF-8C39-45FD-97E1-D5AA768094B2</string>
 		<string>2B7A9E94-CC88-4D95-AB8C-1CE638D6C811</string>
@@ -48,6 +78,7 @@
 		<string>D8CBE542-D110-4232-A8C1-DCC63289FB21</string>
 		<string>3AB3A528-82D0-4F68-86CA-59CC7F6DCFA9</string>
 		<string>B3A7D3D6-6B30-4C27-A8BB-197213E18A6A</string>
+		<string>916A0D99-D0DD-4E6A-B960-1BF5E8CB9DC3</string>
 	</array>
 	<key>uuid</key>
 	<string>D36372DA-A9BD-4793-A9BD-94C52AA916EA</string>
