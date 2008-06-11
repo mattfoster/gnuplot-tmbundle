@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>29cm, 20cm</string>
+	<key>name</key>
+	<string>a4 landscape</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>tabTrigger</key>
+	<string>a4</string>
+	<key>uuid</key>
+	<string>528A73E5-562A-46B3-B685-E5EC24582C13</string>
+</dict>
+</plist>
