@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>plot ${1:f(x)}${2: using ${3:1:2} }with ${4:lines} ${5:title "$6"}${7:,\\}</string>
+	<string>${1:f}${2:(${3:x})} = </string>
 	<key>name</key>
-	<string>plot</string>
+	<string>function</string>
 	<key>scope</key>
 	<string>source.gnuplot</string>
 	<key>tabTrigger</key>
-	<string>plot</string>
+	<string>f</string>
 	<key>uuid</key>
-	<string>B52782D2-240F-49DC-A805-328C312AAFAE</string>
+	<string>E0C512D6-AFFB-42F7-84A1-DEF072D37BF4</string>
 </dict>
 </plist>

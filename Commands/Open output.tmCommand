@@ -8,7 +8,7 @@
 	<string>#!/usr/bin/env ruby -w
 
 File.readlines(ENV['TM_FILEPATH']).each do |line|
-  if line =~ /^set output "(.*)"\s*$/
+  if line =~ /^set output ["'](.*)["']\s*$/
     puts %x{open #{$1}}
   end
 end
