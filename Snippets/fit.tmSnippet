@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>fit ${1:f(x)} ${2:"$3.dat"}${4: using ${5:1:2}} ${6:via} </string>
+	<key>name</key>
+	<string>fit</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>tabTrigger</key>
+	<string>fit</string>
+	<key>uuid</key>
+	<string>51F70D02-073E-442D-8D3E-6D61B8CA69C6</string>
+</dict>
+</plist>
