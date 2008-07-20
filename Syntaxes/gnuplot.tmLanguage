@@ -97,6 +97,8 @@
 			<string>keyword.other.setting.gnuplot</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>missuse of scopes alert! Just for pretty colours</string>
 			<key>match</key>
 			<string>\b(cd|call|clear|exit|unset|plot|splot|help|load|pause|quit|fit|replot|ifFIT_LIMIT|FIT_MAXITER|FIT_START_LAMBDA|FIT_LAMBDA_FACTOR|FIT_LOG|FIT_SCRIPT|print|pwd|reread|reset|save|show|test|!|functions|var)\b</string>
 			<key>name</key>
@@ -116,9 +118,9 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>\b(xdata|timefmt|grid|noytics|ytics|fs|logscale|time|notime|mxtics|nomxtics|style|mcbtics|nologscale|axes|x1y2|unique|acs(plines)?|size|layout|inside|origin|multiplot|xtics|xr(ange)?|yr(ange)?|square|nosquare|ratio|noratio|binary|matrix|index|every|thru|sm(ooth)?|all|angles|degrees|radians|arrow|noarrow|autoscale|noautoscale|arrowstyle|t|ymin|\.\.\.|-|too|much?|vs|autoscale|t|x|y|z|zcb|linear|cubicspline|bspline|order|level(s)?|auto|disc(rete)?|incr(emental)?|from|to|head|nohead|graph|base|both|nosurface|table|out(put)?|data|bar|border|noborder|boxwidth|clabel|noclabel|clip|noclip|cntrp(aram)?|contour|nocontour|dgrid3d|nodgrid3d|dummy|encoding|format|uded|-|yet.|function|grid|nogrid|hidden(3d)?|nohidden(3d)?|isosample(s)?|key|nokey|historysize|nohistorysize|defaults|offset|nooffset|trianglepattern|undefined|noundefined|altdiagonal|bentover|noaltdiagonal|nobentover|left|right|top|bottom|outside|below|samplen|spacing|width|height|box|nobox|linestyle|ls|linetype|lt|linewidth|lw|Left|Right|autotitles|noautotitles|enhanced|noenhanced|isosamples|label|nolabel|logscale|nolog(scale)?|missing|center|font|locale|mapping|margin|bmargin|lmargin|rmargin|tmargin|spherical|cylindrical|cartesian|linestyle|nolinestyle|linetype|lt|linecolor|lc|linewidth|lw|pointtype|pt|pointsize|ps|mouse|nomouse|nooffsets|data|candlesticks|financebars|linespoints|lp|vector|nosurface|linux|aed767|aed512|gpic|regis|tek410x|tek40|vttek|kc-tek40xx|km-tek40xx|selanar|bitgraph|xlib|x11|X11|aifm|cgm|dumb|fig|gif|small|large|size|nofontlist|notimestamp|variables|version|x2data|y2data|ydata|zdata|reverse|writeback|noreverse|nowriteback|axis|mirror|autofreq|nomirror|rotate|autofreq|norotate|update|multiplot|nomultiplot|mytics|nomytics|mztics|nomztics|mx2tics|nomx2tics|my2tics|nomy2tics|offsets|origin|output|para(metric)?|nopara(metric)?|pointsize|polar|nopolar|zrange|x2range|y2range|rrange|cbrange|trange|urange|vrange|sample(s)?|size|bezier|boxerrorbars|boxes|bargraph|bar(s)?|boxxy(errorbars)?|csplines|dots|fsteps|histeps|impulses|line(s)?|linesp(oints)?|points|poiinttype|sbezier|splines|steps|onal|vectors|xerr(orbars)?|xyerr(orbars)?|yerr(orbars)?|financebars|candlesticks|vector|errorb(ars)?|surface|filledcurve(s)?|pm3d|x1|x2|y1|y2|xy|closed|at|pi|front|errorlines|xerrorlines|yerrorlines|xyerrorlines|tics|ticslevel|ticscale|time|timefmt|view|xdata|xdtics|noxdtics|ydtics|noydtics|zdtics|nozdtics|x2dtics|nox2dtics|y2dtics|noy2dtics|xlab(el)?|ylab(el)?|zlab(el)?|cblab(el)?|x2label|y2label|xmtics|xmtics|noxmtics|ymtics|noymtics|zmtics|nozmtics|x2mtics|nox2mtics|y2mtics|noy2mtics|cbdtics|nocbdtics|cbmtics|nocbmtics|cbtics|nocbtics|xtics|noxtics|ytics|noytics|ztics|noztics|x2tics|nox2tics|y2tics|noy2tics|zero|nozero|zeroaxis|nozeroaxis|xzeroaxis|noxzeroaxis|yzeroaxis|noyzeroaxis|x2zeroaxis|nox2zeroaxis|y2zeroaxis|noy2zeroaxis|angles|one|two|fill|empty|solid|pattern|default|scansautomatic|flush|b(egin)?|noftriangles|implicit|palette|positive|negative|ps_allcF|nops_allcF|maxcolors|push|fontfile|pop|rgbformulae|defined|file|color|model|gradient|colornames|RGB|HSV|CMY|YIQ|XYZ|colorbox|vertical|horizontal|user|bdefault|loadpath|fontpath|decimalsign|in|out|on|off|dashed|fname|fillstyle|fsize)\b</string>
+			<string>\b(on|off|default|inside|outside|lmargin|rmargin|tmargin|bmargin|at|left|right|center|top|bottom|center|vertical|horizontal|Left|Right|noreverse|noinvert|samplen|spacing|width|height|noautotitle|columnheader|title|noenhanced|nobox|linestyle|ls|linetype|lt|linewidth|lw)\b</string>
 			<key>name</key>
-			<string>keyword.other.type.gnuplot</string>
+			<string>constant.other.type.gnuplot</string>
 		</dict>
 		<dict>
 			<key>comments</key>
@@ -126,7 +128,7 @@
 			<key>match</key>
 			<string>\b(aed512|aed767|aifm|aqua|bitgraph|cgm|corel|dumb|dxf|eepic|emf|emtex|epslatex|epson_180dpi|epson_60dpi|epson_lx800|fig|gif|gpic|hp2623A|hp2648|hp500c|hpdj|hpgl|hpljii|hppj|imagen|jpeg|kc_tek40xx|km_tek40xx|latex|mf|mif|mp|nec_cp6|okidata|pbm|pcl5|pdf|png|postscript|pslatex|pstex|pstricks|qms|regis|selanar|starc|svg|tandy_60dpi|tek40xx|tek410x|texdraw|tgif|tkcanvas|tpic|unknown|vttek)\b</string>
 			<key>name</key>
-			<string>keyword.other.terminal.gnuplot</string>
+			<string>constant.other.terminal.gnuplot</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -170,27 +172,16 @@
 			<key>contentName</key>
 			<string>keyword.line.show.gnuplot</string>
 			<key>end</key>
-			<string>(?!$\n?)|(?!\#)</string>
+			<string>(?!\#)($\n?)</string>
 			<key>name</key>
 			<string>keyword.line.show.gnuplot</string>
-		</dict>
-		<dict>
-			<key>begin</key>
-			<string>\b(plot)\b</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>0</key>
+			<key>patterns</key>
+			<array>
 				<dict>
-					<key>name</key>
-					<string>keyword.other.command.gnuplot</string>
+					<key>include</key>
+					<string>$self</string>
 				</dict>
-			</dict>
-			<key>contentName</key>
-			<string>keyword.line.plot.gnuplot</string>
-			<key>end</key>
-			<string>(?!$\n?)|(?!\#)</string>
-			<key>name</key>
-			<string>keyword.line.plot.gnuplot</string>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -208,12 +199,17 @@
 					<string>keyword.other.setting.gnuplot</string>
 				</dict>
 			</dict>
-			<key>contentName</key>
-			<string>keyword.line.set.terminal.gnuplot</string>
 			<key>end</key>
-			<string>(?!$\n?)|(?!\#)</string>
+			<string>(?!\#)($\n?)</string>
 			<key>name</key>
 			<string>keyword.line.set.terminal.gnuplot</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -231,12 +227,17 @@
 					<string>keyword.other.setting.gnuplot</string>
 				</dict>
 			</dict>
-			<key>contentName</key>
-			<string>keyword.line.set.key.gnuplot</string>
 			<key>end</key>
-			<string>(?!$\n?)|(?!\#)</string>
+			<string>(?!\#)($\n?)</string>
 			<key>name</key>
 			<string>keyword.line.set.key.gnuplot</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -257,9 +258,16 @@
 			<key>contentName</key>
 			<string>keyword.line.set.gnuplot</string>
 			<key>end</key>
-			<string>(?!$\n?)|(?!\#)</string>
+			<string>(?!\#)($\n?)</string>
 			<key>name</key>
 			<string>keyword.line.set.gnuplot</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
 		</dict>
 	</array>
 	<key>repository</key>
