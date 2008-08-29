@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>gnuplot</string>
+		<string>gnu</string>
 		<string>gp</string>
 	</array>
 	<key>keyEquivalent</key>
