@@ -10,7 +10,7 @@
 $LOAD_PATH &lt;&lt; "#{ENV['TM_SUPPORT_PATH']}/lib"
 $LOAD_PATH &lt;&lt; "#{ENV['TM_BUNDLE_SUPPORT']}/lib"
 require 'web_preview'
-require 'TextMate'
+require 'textmate'
 require 'gnuplot_help'
 include Gnuplot
 
