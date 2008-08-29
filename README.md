@@ -29,7 +29,7 @@ Run:
 
 `cd ~/Library/Application\ Support/TextMate/Bundles`
 
-`git clone git://github.com/mattfoster/git-tmbundle.git Gnuplot.tmbundle`
+`git clone git://github.com/mattfoster/gnuplot-tmbundle.git Gnuplot.tmbundle`
 
 ## Maintainer 
 
