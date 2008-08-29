@@ -19,7 +19,7 @@ module Gnuplot
     # Exit if there was an errror running gnuplot:
     unless $? == 0
       puts "Error running gnuplot help command." 
-      puts output
+      puts help
       exit
     end
     
