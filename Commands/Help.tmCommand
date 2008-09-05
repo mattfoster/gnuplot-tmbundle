@@ -27,9 +27,14 @@ then press `p`, and press escape to see the possible completion options.
 
 In some cases, gnuplot doesn't print possible options, in which case, completions are either hard coded, or not present. To see where completions are available, see the bundle contents.
 
+
+# Testing
+
+To quickly test if the gnuplot is correctly installed, you can use the 'test' snippet. Just type `test⇥`, to get some test code. Then run it with `⌘R`. 
+
 # Notes
 
-For best results, you'll need TextMate to be able to see a `gnuplot` binary. 
+For best/any results, you'll need TextMate to be able to see a `gnuplot` binary. 
 
 To find out if it can, type: `which gnuplot` into an empty file, and press ⌃R. You should see something like the following:
 
