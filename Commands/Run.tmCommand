@@ -7,7 +7,11 @@
 	<key>command</key>
 	<string>#!/bin/bash
 
-gnuplot &lt; "$TM_FILEPATH"</string>
+if [[ -x $TM_GNUPLOT ]]; then 
+	$TM_GNUPLOT &lt; "$TM_FILEPATH"
+else
+	gnuplot &lt; "$TM_FILEPATH"
+fi</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
