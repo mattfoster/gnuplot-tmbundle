@@ -14,7 +14,8 @@ module Gnuplot
     end
     
     # Run gnuplot, and get the output
-    help << `export PAGER=cat; echo help #{word} | gnuplot 2>&1`
+    gnuplot = ENV['TM_GNUPLOT'] || 'gnuplot'
+    help << `export PAGER=cat; echo help #{word} | #{gnuplot} 2>&1`
 
     # Exit if there was an errror running gnuplot:
     unless $? == 0
