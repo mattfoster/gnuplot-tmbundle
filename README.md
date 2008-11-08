@@ -1,5 +1,7 @@
 # The Gnuplot TextMate bundle
 
+See this [screencast](http://www.vimeo.com/2181877) for quick installation instrucitons.
+
 ## Introduction
 
 Aims to provide a useful set of commands, snippets and language support for
