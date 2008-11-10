@@ -58,6 +58,14 @@
 					<string>#number</string>
 				</dict>
 				<dict>
+					<key>include</key>
+					<string>#string_double</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string_single</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>:</string>
 					<key>name</key>
@@ -65,7 +73,13 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>[^\s\]]</string>
+					<string>\b([a-zA-Z]\w*)\b\s*(=|in)</string>
+					<key>name</key>
+					<string>variable-assignment.range.gnuplot</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i:[^\s(pi|e)\]])</string>
 					<key>name</key>
 					<string>invalid.illegal.expected-range-separator.gnuplot</string>
 				</dict>
@@ -90,6 +104,14 @@
 			<string>(?&lt;!\$)(#)(?!\{).*$\n?</string>
 			<key>name</key>
 			<string>comment.line.number-sign.gnuplot</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>introduce in gnuplot 4.3.</string>
+			<key>match</key>
+			<string>for</string>
+			<key>name</key>
+			<string>keyword.other.iteration.gnuplot</string>
 		</dict>
 		<dict>
 			<key>match</key>
@@ -242,7 +264,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\b(set)\b\s*(?!\b(terminal|key)\b)</string>
+			<string>\b(set)\b\s*(?!\b(terminal|key|for)\b)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
