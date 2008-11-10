@@ -8,11 +8,14 @@
 	<string>#! /usr/bin/env ruby -w
 
 $LOAD_PATH &lt;&lt; "#{ENV['TM_SUPPORT_PATH']}/lib"
+$LOAD_PATH &lt;&lt; "#{ENV['TM_SUPPORT_PATH']}/lib/tm"
 $LOAD_PATH &lt;&lt; "#{ENV['TM_BUNDLE_SUPPORT']}/lib"
 require 'web_preview'
 require 'textmate'
+require 'markdown'
 require 'gnuplot_help'
 include Gnuplot
+include TextMate
 
 word = ENV['TM_SELECTED_TEXT'] || ENV['TM_CURRENT_WORD']
 
@@ -40,12 +43,7 @@ else
     puts "&lt;/ul&gt;"
   else
     puts "&lt;div id=\"output\"&gt;"
-    begin 
-      puts TextMate::Markdown.to_html(help)
-    rescue NameError
-      require 'bluecloth'
-      puts BlueCloth.new( help ).to_html( :markdown )
-    end
+    puts Markdown.to_html(help)
   end
 end
 puts "&lt;/div&gt;"
