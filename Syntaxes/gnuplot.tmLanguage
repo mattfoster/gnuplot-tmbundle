@@ -28,17 +28,26 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>\[</string>
+			<string>\b(for)\b\s*(\[)</string>
 			<key>beginCaptures</key>
 			<dict>
-				<key>0</key>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.iteration.gnuplot</string>
+				</dict>
+				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.definition.range.begin.gnuplot</string>
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>gnuplot range statement [a:b]</string>
+			<string>gnuplot iteration statement. 
+			There are two forms:
+			    numeric [n = 1:2{:inc}] 
+			    string based [str in "x y z"]
+			    but both can also iterate over lists etc, so this is kept loose.</string>
 			<key>end</key>
 			<string>\]</string>
 			<key>endCaptures</key>
@@ -50,12 +59,16 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.structure.range.gnuplot</string>
+			<string>meta.structure.iteration.gnuplot</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
 					<string>#number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#operator</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -76,6 +89,55 @@
 					<string>\b([a-zA-Z]\w*)\b\s*(=|in)</string>
 					<key>name</key>
 					<string>variable-assignment.range.gnuplot</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i:[^\s(pi|e)\]])</string>
+					<key>name</key>
+					<string>invalid.illegal.expected-range-separator.gnuplot</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>\[</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.range.begin.gnuplot</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>gnuplot range statement [a:b]. Lots of things are legal, still more make no sense!</string>
+			<key>end</key>
+			<string>\]</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.range.end.gnuplot</string>
+				</dict>
+			</dict>
+			<key>name</key>
+			<string>meta.structure.range.gnuplot</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#number</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#operator</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>:</string>
+					<key>name</key>
+					<string>punctuation.separator.range.gnuplot</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -320,6 +382,15 @@
                  )</string>
 			<key>name</key>
 			<string>constant.numeric.gnuplot</string>
+		</dict>
+		<key>operator</key>
+		<dict>
+			<key>comment</key>
+			<string>Operator symbols</string>
+			<key>match</key>
+			<string>\s*(==|~=|&gt;|&gt;=|&lt;|&lt;=|&amp;|&amp;&amp;|:|\||\|\||\+|-|\*|\.\*|/|\./|\\|\.\\|\^|\.\^)\s*</string>
+			<key>name</key>
+			<string>keyword.operator.symbols.matlab</string>
 		</dict>
 		<key>string_double</key>
 		<dict>
