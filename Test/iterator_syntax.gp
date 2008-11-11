@@ -3,7 +3,7 @@ set terminal pdf
 set output '~/test.pdf'
 
 set for [i = 1:10] style line i lc rgb "blue" # Broken, should still be line.set
-set for [1:10] # Works file as line.set 
+set for [n = 1:10] # Works file as line.set 
 
 plot [0:pi] for [n=1:2] sin(x*n)/n with filledcurves
 plot for [ filename in ]
