@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby
+$: &lt;&lt; ENV["TM_SUPPORT_PATH"]+"/lib"
+require "ui.rb"
+require 'date'
+if (!ENV["TM_FILENAME"] || ENV["TM_FILENAME"] == "")
+	# We hebben geen bestandsnaam, die moeten we dus vragen
+	plotname = TextMate::UI.request_string(
+		:title =&gt; "Bestandsnaam",
+		:prompt =&gt; "Please enter the name of the new plot:"
+	)
+else
+	plotname = ENV["TM_FILENAME"].gsub(".plt","")
+end
+
+puts &lt;&lt;IETS
+#
+#  #{plotname}
+#  
+#  Created by #{me=`whoami`; `finger "#{me.strip}" | sed -n 's/.*Name: \\(.*\\)/\\1/p'`.strip} on #{Date.today}.
+#
+set term postscript eps enhanced color font "Garamond" 16
+set size 0.7,0.7
+set output '#{plotname}.eps'
+
+${1:plot '#{plotname}.dat' u 1}$0
+
+unset output
+IETS</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>Gnuplot template</string>
+	<key>output</key>
+	<string>insertAsSnippet</string>
+	<key>tabTrigger</key>
+	<string>plot</string>
+	<key>uuid</key>
+	<string>13D0F1C4-078F-4E31-B629-6DB4FF0A6BD8</string>
+</dict>
+</plist>
