@@ -11,6 +11,8 @@ So far, various features have been implemented, including:
 
   * Syntax hilighting.
   * Script execution -- pressing ' ⌘R' pipes the script through gnuplot.
+  * Plot in aquaterm -- pressing also ''⌘R' gives you the option of viewing the plot in aquaterm.
+    * Execution and display -- we now have a command for running a script and showing the result in aquaterm.
   * Output viewing -- pressing '⇧⌘O' will search though the script and open any filenames it finds after `set output` statements. 
   * Toggling (un)set -- pressing '⇧⌘S' changes toggles between `set` and `unset` keywords on the current line.
   * Online help -- pressing '⌃H' with the caret over a keyword pops up an HTML window containing gnuplot's built-in help for that keyword.
@@ -36,4 +38,8 @@ Run:
 ## Maintainer 
 
 [Matt Foster](mailto:matt.p.foster@gmail.com) : [homepage](http://my-mili.eu/matt)
+
+## Thanks:
+
+Some functionality merged in from [gnuplot-textmate-bundle](http://github.com/pieter/gnuplot-textmate-bundle/tree/master "pieter's gnuplot-textmate-bundle at master &mdash; GitHub") on GitHub.
 
