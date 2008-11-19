@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
@@ -12,7 +12,7 @@ require 'date'
 if (!ENV["TM_FILENAME"] || ENV["TM_FILENAME"] == "")
 	# We hebben geen bestandsnaam, die moeten we dus vragen
 	plotname = TextMate::UI.request_string(
-		:title =&gt; "Bestandsnaam",
+		:title =&gt; "Filename",
 		:prompt =&gt; "Please enter the name of the new plot:"
 	)
 else
@@ -39,8 +39,10 @@ IETS</string>
 	<string>Gnuplot template</string>
 	<key>output</key>
 	<string>insertAsSnippet</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
 	<key>tabTrigger</key>
-	<string>plot</string>
+	<string>plt</string>
 	<key>uuid</key>
 	<string>13D0F1C4-078F-4E31-B629-6DB4FF0A6BD8</string>
 </dict>

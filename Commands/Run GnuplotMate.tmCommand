@@ -8,13 +8,13 @@
 	<string>#!/usr/bin/env ruby
 require ENV["TM_BUNDLE_SUPPORT"] + "/GnuplotMate"
 
-GnuplotMate.run</string>
+GnuplotMate.run_in_aquaterm</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
-	<string>Run Gnuplot</string>
+	<string>Show in aquaterm</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>

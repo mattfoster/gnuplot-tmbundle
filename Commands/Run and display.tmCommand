@@ -8,18 +8,18 @@
 	<string>#!/usr/bin/env ruby
 require ENV["TM_BUNDLE_SUPPORT"] + "/GnuplotMate"
 
-GnuplotMate.run</string>
+GnuplotMate.run_all</string>
 	<key>input</key>
 	<string>document</string>
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
-	<string>Run</string>
+	<string>Run and display</string>
 	<key>output</key>
 	<string>showAsTooltip</string>
 	<key>scope</key>
 	<string>source.gnuplot</string>
 	<key>uuid</key>
-	<string>5A3DBE06-7304-4B10-84C9-5D392E42971A</string>
+	<string>442541BC-836F-49F3-85AF-9F1BF4A3444C</string>
 </dict>
 </plist>

@@ -5,10 +5,23 @@ class GnuplotMate
     possible_paths.select { |x| x && File.exist?(x) }.first
   end
 
-  def self.run
+  def self.run_in_aquaterm
     g = GnuplotMate.new
     g.run_plot_in_aquaterm(STDIN.read)
   end
+
+  def self.run
+    g = GnuplotMate.new
+    g.execute(STDIN.read)
+  end
+
+  def self.run_all
+    script=STDIN.read
+    g = GnuplotMate.new
+    g.execute(script)
+    g.run_plot_in_aquaterm(script)
+  end
+
 
   def run_plot_in_aquaterm(data)
     # Delete term lines, change output lines to "term aqua" in order to show plots in Aquaterm
