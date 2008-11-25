@@ -34,9 +34,20 @@
 			<string>7FECE861-47EA-4EF1-8052-0A85B6F74369</string>
 			<string>------------------------------------</string>
 			<string>3AB3A528-82D0-4F68-86CA-59CC7F6DCFA9</string>
+			<string>5E8F31B0-34F9-4EF1-9EE1-93AC574D5648</string>
 		</array>
 		<key>submenus</key>
 		<dict>
+			<key>5E8F31B0-34F9-4EF1-9EE1-93AC574D5648</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>FE2FF6B5-003D-4DE1-AF0C-2CFBB4B38552</string>
+					<string>71DBCBA9-515D-4F06-987C-E79C4E640471</string>
+				</array>
+				<key>name</key>
+				<string>Online (Web) Help</string>
+			</dict>
 			<key>C2F814B6-3392-405E-9974-124B9A24AAE0</key>
 			<dict>
 				<key>items</key>
@@ -97,6 +108,8 @@
 		<string>13D0F1C4-078F-4E31-B629-6DB4FF0A6BD8</string>
 		<string>799B68E9-5DA3-41CC-BC70-76B1D1C83DB6</string>
 		<string>2ABB1514-92B0-4747-B54D-0CFEC3D6C816</string>
+		<string>FE2FF6B5-003D-4DE1-AF0C-2CFBB4B38552</string>
+		<string>71DBCBA9-515D-4F06-987C-E79C4E640471</string>
 	</array>
 	<key>uuid</key>
 	<string>D36372DA-A9BD-4793-A9BD-94C52AA916EA</string>
