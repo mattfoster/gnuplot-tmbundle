@@ -22,6 +22,13 @@ class GnuplotMate
     g.run_plot_in_aquaterm(script)
   end
 
+  def self.run_in_preview
+    script=STDIN.read
+    g = GnuplotMate.new
+    g.execute(script)
+    g.run_plot_in_preview(script)
+  end
+
   def run_plot_in_preview(data)
     data.gsub!(/^set term.*$/) { "set term pdf " }
     IO.popen(path, 'w') do |plot|
