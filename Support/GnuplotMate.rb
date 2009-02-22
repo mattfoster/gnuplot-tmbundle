@@ -22,6 +22,15 @@ class GnuplotMate
     g.run_plot_in_aquaterm(script)
   end
 
+  def run_plot_in_preview(data)
+    data.gsub!(/^set term.*$/) { "set term pdf " }
+    IO.popen(path, 'w') do |plot|
+      output = plot.puts data
+      puts output if (output != nil)
+    end
+    p=IO.popen('open -a Preview.app *.pdf; open -a TextMate.app', 'r')
+    p.close
+  end
 
   def run_plot_in_aquaterm(data)
     # Delete term lines, change output lines to "term aqua" in order to show plots in Aquaterm
