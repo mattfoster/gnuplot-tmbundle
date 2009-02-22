@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>open http://t16web.lanl.gov/Kawano/gnuplot/index-e.html</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>name</key>
+	<string>Gnuplot not so FAQ</string>
+	<key>output</key>
+	<string>replaceSelectedText</string>
+	<key>scope</key>
+	<string>source.gnuplot</string>
+	<key>uuid</key>
+	<string>FE2FF6B5-003D-4DE1-AF0C-2CFBB4B38552</string>
+</dict>
+</plist>
