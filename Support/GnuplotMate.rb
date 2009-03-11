@@ -38,6 +38,21 @@ class GnuplotMate
     p=IO.popen('open -a Preview.app *.pdf; open -a TextMate.app', 'r')
     p.close
   end
+  
+  def self.run_and_save
+    script=STDIN.read
+    g = GnuplotMate.new
+    
+    # Match the filename and set the pdf output
+    filename = script.match(/#!OUTPUT=(.*)$/)[1] rescue "./temp.pdf"
+    #script.gsub!(/^set term.*$/) { "" }
+    script = "set term pdf\nset output \"#{filename}\"\n" + script
+    # Execute
+    g.execute(script)
+    `osascript &>/dev/null \
+  	   -e 'tell app "SystemUIServer" to activate' \
+  	   -e 'tell app "TextMate" to activate' &`
+  end
 
   def run_plot_in_aquaterm(data)
     # Delete term lines, change output lines to "term aqua" in order to show plots in Aquaterm
