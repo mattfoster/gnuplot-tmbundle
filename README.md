@@ -14,6 +14,7 @@ So far, various features have been implemented, including:
   * Plot in aquaterm -- pressing also ''⌘R' gives you the option of viewing the plot in aquaterm.
     * Execution and display -- we now have a command for running a script and showing the result in aquaterm.
   * Output viewing -- pressing '⇧⌘O' will search though the script and open any filenames it finds after `set output` statements. 
+  * Output the current file to a PDF file and specify the file name in the plot file
   * Toggling (un)set -- pressing '⇧⌘S' changes toggles between `set` and `unset` keywords on the current line.
   * Online help -- pressing '⌃H' with the caret over a keyword pops up an HTML window containing gnuplot's built-in help for that keyword.
 
@@ -34,6 +35,15 @@ Run:
 `cd ~/Library/Application\ Support/TextMate/Bundles`
 
 `git clone git://github.com/mattfoster/gnuplot-tmbundle.git Gnuplot.tmbundle`
+
+## Saving the Output of a script to a PDF file
+
+You can specify a file name directly in the script and use ⌘R to execute the script. From the options choose save to PDF. To
+specify a name in the script put the following line in the beginning of you document:
+
+    #!OUTPUT=this_is_my_file.pdf
+        
+The script will parse for this option and save the generated PDF to your directory.
 
 ## Maintainer 
 
