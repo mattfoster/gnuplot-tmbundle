@@ -44,7 +44,8 @@ class GnuplotMate
     g = GnuplotMate.new
     
     # Match the filename and set the pdf output
-    filename = script.match(/#!OUTPUT=(.*)$/)[1] rescue "./temp.pdf"
+    filename = ENV["TM_FILEPATH"].gsub(File.extname(ENV["TM_FILEPATH"]),".pdf")    
+    filename = script.match(/#!OUTPUT=(.*)$/)[1] rescue filename
     #script.gsub!(/^set term.*$/) { "" }
     script = "set term pdf\nset output \"#{filename}\"\n" + script
     # Execute

@@ -43,7 +43,8 @@ specify a name in the script put the following line in the beginning of you docu
 
     #!OUTPUT=this_is_my_file.pdf
         
-The script will parse for this option and save the generated PDF to your directory.
+The script will parse for this option and save the generated PDF to your directory. If you choose not
+to specify a name, the name of the current document will be used.
 
 ## Maintainer 
 
