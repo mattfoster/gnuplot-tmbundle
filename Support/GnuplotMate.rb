@@ -1,5 +1,10 @@
 class GnuplotMate
-  
+
+  def initialize 
+    path = File.dirname(ENV["TM_FILEPATH"])
+    Dir.chdir path
+  end
+
   def path
     possible_paths = [ENV["TM_GNUPLOT"], `which gnuplot`, "/opt/local/bin/gnuplot", "/sw/bin/gnuplot", "/usr/local/bin/gnuplot"]
     possible_paths.select { |x| x && File.exist?(x) }.first
