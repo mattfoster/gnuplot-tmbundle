@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby -w
 
-$LOAD_PATH << "#{ENV['TM_SUPPORT_PATH']}/lib"
-$LOAD_PATH << "#{ENV['TM_SUPPORT_PATH']}/lib/tm"
-$LOAD_PATH << "#{ENV['TM_BUNDLE_SUPPORT']}/lib"
+require "#{ENV['TM_SUPPORT_PATH']}/lib/tm/markdown.rb"
+require "#{ENV['TM_BUNDLE_SUPPORT']}/lib/gnuplot_help.rb"
 
 # require 'rubygems'
 # require 'bluecloth'
