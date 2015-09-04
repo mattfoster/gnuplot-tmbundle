@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>changed</key>
+	<dict>
+		<key>command</key>
+		<string>#! /usr/bin/env ruby -w
+
+
+require "#{ENV['TM_BUNDLE_SUPPORT']}/lib/gnuplot_help.rb"
+
+require "#{ENV['TM_SUPPORT_PATH']}/lib/textmate.rb"
+require "#{ENV['TM_SUPPORT_PATH']}/lib/web_preview.rb"
+require "#{ENV['TM_SUPPORT_PATH']}/lib/tm/markdown.rb"
+
+include Gnuplot
+include TextMate
+
+current_word = ENV['TM_SELECTED_TEXT'] || ENV['TM_CURRENT_WORD']
+
+help = convert(current_word)
+
+html_header "Gnuplot Built-in Help"
+  
+# Print html/css/js header code
+puts Gnuplot::header
+
+if help.nil?
+  puts "&lt;div id=\"output\"&gt;No help found for #{current_word}"
+else
+
+  # If this is the case, then the next lines (until the end) need to be indented
+  # and made into links.
+  unless help.lines.grep(/possible matches:$/).empty?
+
+    puts "&lt;div id=\"output\"&gt;"
+    puts "&lt;h2&gt;Ambiguous topic: '#{word}'&lt;/h2&gt;&lt;p&gt;Possible matches:&lt;/p&gt;&lt;ul&gt;"
+
+    help.lines.grep(/^(?&gt;\t\b(.*)\b$)/) do |word|
+      puts "&lt;li&gt;&lt;a onClick=\'help(\"#{$1}\")\'&gt;#{$1}&lt;/a&gt;&lt;/li&gt;"
+    end
+    puts "&lt;/ul&gt;"
+  else
+    puts "&lt;div id=\"output\"&gt;"
+    puts Markdown.to_html(help)
+  end
+end
+puts "&lt;/div&gt;"
+
+# Standard footer
+html_footer
+</string>
+		<key>inputFormat</key>
+		<string>text</string>
+		<key>outputCaret</key>
+		<string>afterOutput</string>
+		<key>outputFormat</key>
+		<string>html</string>
+		<key>outputLocation</key>
+		<string>newWindow</string>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
+	<key>deleted</key>
+	<array>
+		<string>output</string>
+	</array>
+	<key>isDelta</key>
+	<true/>
+	<key>uuid</key>
+	<string>26A04D04-F5BE-4659-AD78-FFD0AEB38FD7</string>
+</dict>
+</plist>

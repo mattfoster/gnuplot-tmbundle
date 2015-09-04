@@ -1,6 +1,11 @@
 # The Gnuplot TextMate bundle
 
-See this [screencast](http://www.vimeo.com/2181877) for quick installation instrucitons.
+See this [screencast](http://www.vimeo.com/2181877) for quick installation instructions.
+
+## TextMate 2
+
+This bundle was written for TM 1, and while I've made some changes to improve
+compatibility, some things don't work. 
 
 ## Introduction
 

@@ -2,12 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>beforeRunningCommand</key>
-	<string>nop</string>
-	<key>command</key>
-	<string>#!/usr/bin/env ruby
-$: &lt;&lt; ENV["TM_SUPPORT_PATH"]+"/lib"
-require "ui.rb"
+	<key>changed</key>
+	<dict>
+		<key>command</key>
+		<string>#!/usr/bin/env ruby
+
+require ENV['TM_SUPPORT_PATH'] + '/lib/ui.rb'
 require 'date'
 if (!ENV["TM_FILENAME"] || ENV["TM_FILENAME"] == "")
 	# We hebben geen bestandsnaam, die moeten we dus vragen
@@ -33,16 +33,23 @@ ${1:plot '#{plotname}.dat' u 1}$0
 
 unset output
 IETS</string>
-	<key>input</key>
-	<string>selection</string>
-	<key>name</key>
-	<string>Gnuplot template</string>
-	<key>output</key>
-	<string>insertAsSnippet</string>
-	<key>scope</key>
-	<string>source.gnuplot</string>
-	<key>tabTrigger</key>
-	<string>plt</string>
+		<key>inputFormat</key>
+		<string>text</string>
+		<key>outputCaret</key>
+		<string>afterOutput</string>
+		<key>outputFormat</key>
+		<string>snippet</string>
+		<key>outputLocation</key>
+		<string>replaceInput</string>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
+	<key>deleted</key>
+	<array>
+		<string>output</string>
+	</array>
+	<key>isDelta</key>
+	<true/>
 	<key>uuid</key>
 	<string>13D0F1C4-078F-4E31-B629-6DB4FF0A6BD8</string>
 </dict>

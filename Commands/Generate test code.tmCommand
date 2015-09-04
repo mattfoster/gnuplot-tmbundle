@@ -2,20 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>beforeRunningCommand</key>
-	<string>nop</string>
-	<key>command</key>
-	<string>cat "$TM_BUNDLE_PATH/Test/example.gp"</string>
-	<key>input</key>
-	<string>none</string>
-	<key>name</key>
-	<string>Generate test code</string>
-	<key>output</key>
-	<string>insertAsSnippet</string>
-	<key>scope</key>
-	<string>source.gnuplot</string>
-	<key>tabTrigger</key>
-	<string>test</string>
+	<key>changed</key>
+	<dict>
+		<key>command</key>
+		<string>#!/bin/bash
+[[ -f "${TM_SUPPORT_PATH}/lib/bash_init.sh" ]] &amp;&amp; . "${TM_SUPPORT_PATH}/lib/bash_init.sh"
+
+cat "$TM_BUNDLE_SUPPORT/../Test/example.gp"</string>
+		<key>inputFormat</key>
+		<string>text</string>
+		<key>outputCaret</key>
+		<string>afterOutput</string>
+		<key>outputFormat</key>
+		<string>snippet</string>
+		<key>outputLocation</key>
+		<string>replaceSelection</string>
+		<key>version</key>
+		<integer>2</integer>
+	</dict>
+	<key>deleted</key>
+	<array>
+		<string>output</string>
+	</array>
+	<key>isDelta</key>
+	<true/>
 	<key>uuid</key>
 	<string>ABC87376-E199-4473-A505-4E61DCD28883</string>
 </dict>
