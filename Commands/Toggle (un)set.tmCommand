@@ -9,25 +9,36 @@
 
 print case str = STDIN.read
   # Handle standard quotes
-  when /\Aset\b(.*)$/: 'unset' + $1  
-  when /\Aunset\b(.*)$/: 'set' + $1
+  when /\Aset\b(.*)$/ 
+    'unset' + $1  
+  when /\Aunset\b(.*)$/ 
+    'set' + $1
   # Default case
-  else str
+  else
+    str
 end
 </string>
 	<key>fallbackInput</key>
 	<string>line</string>
 	<key>input</key>
 	<string>selection</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@S</string>
 	<key>name</key>
 	<string>Toggle (un)set</string>
-	<key>output</key>
-	<string>replaceSelectedText</string>
+	<key>outputCaret</key>
+	<string>heuristic</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>replaceInput</string>
 	<key>scope</key>
 	<string>source.gnuplot</string>
 	<key>uuid</key>
 	<string>916A0D99-D0DD-4E6A-B960-1BF5E8CB9DC3</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
