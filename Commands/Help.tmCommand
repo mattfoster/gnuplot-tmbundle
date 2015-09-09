@@ -10,7 +10,7 @@
 . "$TM_SUPPORT_PATH/lib/webpreview.sh"
 html_header "Gnuplot Bundle Help" "Gnuplot"
 
-"$TM_SUPPORT_PATH/lib/markdown_to_help.rb" &lt;&lt;'MARKDOWN'
+ruby18 -r "$TM_SUPPORT_PATH/lib/markdown_to_help.rb" &lt;&lt;'MARKDOWN'
 
 # Introduction
 
@@ -56,13 +56,21 @@ html_footer
 	<string>none</string>
 	<key>input</key>
 	<string>none</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>name</key>
 	<string>Help</string>
-	<key>output</key>
-	<string>showAsHTML</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>html</string>
+	<key>outputLocation</key>
+	<string>newWindow</string>
 	<key>scope</key>
 	<string>source.gnuplot</string>
 	<key>uuid</key>
 	<string>3AB3A528-82D0-4F68-86CA-59CC7F6DCFA9</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
