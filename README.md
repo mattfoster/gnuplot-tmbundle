@@ -4,8 +4,12 @@ See this [screencast](http://www.vimeo.com/2181877) for quick installation instr
 
 ## TextMate 2
 
-This bundle was written for TM 1, and while I've made some changes to improve
-compatibility, some things don't work. 
+This bundle was originally written for TM 1, and while I've made some changes to improve
+compatibility, some things may not work in TextMate 2.
+
+Please feel free to send pull requests if you make any edits.
+
+## TextMate 1
 
 ## Introduction
 
@@ -17,7 +21,7 @@ So far, various features have been implemented, including:
   * Syntax hilighting.
   * Script execution -- pressing ' ⌘R' pipes the script through gnuplot.
   * Plot in aquaterm -- pressing also ''⌘R' gives you the option of viewing the plot in aquaterm.
-    * Execution and display -- we now have a command for running a script and showing the result in aquaterm.
+  * Execution and display -- we now have a command for running a script and showing the result in aquaterm.
   * Output viewing -- pressing '⇧⌘O' will search though the script and open any filenames it finds after `set output` statements. 
   * Output the current file to a PDF file and specify the file name in the plot file
   * Toggling (un)set -- pressing '⇧⌘S' changes toggles between `set` and `unset` keywords on the current line.
@@ -41,6 +45,8 @@ Run:
 
 `git clone git://github.com/mattfoster/gnuplot-tmbundle.git Gnuplot.tmbundle`
 
+Finally, open `Gnuplot.tmbundle` in Finder.
+
 ## Saving the Output of a script to a PDF file
 
 You can specify a file name directly in the script and use ⌘R to execute the script. From the options choose save to PDF. To
@@ -53,7 +59,7 @@ to specify a name, the name of the current document will be used.
 
 ## Maintainer 
 
-[Matt Foster](mailto:matt.p.foster@gmail.com) : [homepage](http://my-mili.eu/matt)
+[Matt Foster](mailto:matt.p.foster@gmail.com) : [homepage](http://hackerific.net)
 
 ## Thanks:
 
