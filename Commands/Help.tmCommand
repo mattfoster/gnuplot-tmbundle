@@ -30,7 +30,8 @@ In some cases, gnuplot doesn't print possible options, in which case, completion
 
 # Testing
 
-To quickly test if the gnuplot is correctly installed, you can use the 'test' snippet. Just type `test⇥`, to get some test code. Then run it with `⌘R`. 
+To quickly test if the gnuplot is correctly installed, you can use the 'test' snippet. Just set the file type to `Gnuplot` and then type `test⇥`, to get some test code. Then run it with `⌘R`. 
+You should be prompted for a filename.
 
 # Notes
 
@@ -42,6 +43,7 @@ To find out if it can, type: `which gnuplot` into an empty file, and press ⌃R.
 /usr/local/bin/gnuplot&lt;/pre&gt;
 
 If you don't, then make sure you have gnuplot installed. Typical instalation commands are:
+ * brew install gnuplot --with-aquaterm --with-pdflib-lite (after manually installing AquaTerm)
  * fink install gnuplot-nox
  * port install gnuplot
  * installing the Octave Mac OS X build will give you a bundled version of Gnuplot.app. You can use the binary directly by looking in `Gnuplot.app/Contents/Resources/bin/gnuplot`
