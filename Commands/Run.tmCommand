@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>beforeRunningCommand</key>
-	<string>nop</string>
+	<string>saveActiveFile</string>
 	<key>command</key>
 	<string>#!/usr/bin/env ruby
 require ENV["TM_BUNDLE_SUPPORT"] + "/GnuplotMate"
@@ -11,15 +11,23 @@ require ENV["TM_BUNDLE_SUPPORT"] + "/GnuplotMate"
 GnuplotMate.run</string>
 	<key>input</key>
 	<string>document</string>
+	<key>inputFormat</key>
+	<string>text</string>
 	<key>keyEquivalent</key>
 	<string>@r</string>
 	<key>name</key>
 	<string>Run</string>
-	<key>output</key>
-	<string>showAsTooltip</string>
+	<key>outputCaret</key>
+	<string>afterOutput</string>
+	<key>outputFormat</key>
+	<string>text</string>
+	<key>outputLocation</key>
+	<string>toolTip</string>
 	<key>scope</key>
 	<string>source.gnuplot</string>
 	<key>uuid</key>
 	<string>5A3DBE06-7304-4B10-84C9-5D392E42971A</string>
+	<key>version</key>
+	<integer>2</integer>
 </dict>
 </plist>
