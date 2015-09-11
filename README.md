@@ -1,15 +1,14 @@
 # The Gnuplot TextMate bundle
 
-See this [screencast](http://www.vimeo.com/2181877) for quick installation instructions.
+See this [screencast](http://www.vimeo.com/2181877) for quick installation instructions (may be out of date!).
 
 ## TextMate 2
 
 This bundle was originally written for TM 1, and while I've made some changes to improve
-compatibility, some things may not work in TextMate 2.
+compatibility, some things may not work in TextMate 2. Work from prior to these
+changes is on the unmaintained `tm1` branch.
 
 Please feel free to send pull requests if you make any edits.
-
-## TextMate 1
 
 ## Introduction
 
@@ -27,14 +26,16 @@ So far, various features have been implemented, including:
   * Toggling (un)set -- pressing '⇧⌘S' changes toggles between `set` and `unset` keywords on the current line.
   * Online help -- pressing '⌃H' with the caret over a keyword pops up an HTML window containing gnuplot's built-in help for that keyword.
 
-There are a cople of issus with the help, see the end of the `fillstyle` entry, for example, but these are minor, and seem to be due to bugs in bluecloth.
+There are a couple of issues with the help, see the end of the `fillstyle`
+entry, for example, but these are minor, and seem to be due to bugs in
+bluecloth.
 
 Future work will be focused on providing completion, and improving the help
 command -- especially formatting of the output.
 
 ## Links
 
-  *  [Home page](http://github.com/mattfoster/gnuplot-tmbundle/)
+  * [Home page](http://github.com/mattfoster/gnuplot-tmbundle/)
   * [Google Group](http://groups.google.com/group/gnuplot-tmundle)
 
 ## Installation:
@@ -43,9 +44,13 @@ Run:
 
 `cd ~/Library/Application\ Support/TextMate/Bundles`
 
-`git clone git://github.com/mattfoster/gnuplot-tmbundle.git Gnuplot.tmbundle`
+or, if you want to edit the bundle, use 
 
-Finally, open `Gnuplot.tmbundle` in Finder.
+`cd ~/Library/Application Support/Avian/Bundles/`
+
+Then:
+
+`git clone git://github.com/mattfoster/gnuplot-tmbundle.git Gnuplot.tmbundle`
 
 ## Saving the Output of a script to a PDF file
 
